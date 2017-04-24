@@ -73,7 +73,7 @@ class LineLengthAnalyzer(FileAnalyzer):
     def __init__(self):
         FileAnalyzer.__init__(self)
 
-        self._line_length_exceeded_listeners = [] # type: list[LineLengthExceededListener]
+        self._line_length_exceeded_listeners = [] # type: list[LineLengthExceededListenerForComments]
 
     def analyze(self, file_path, file_contents):
         source_file_fst = None
@@ -117,15 +117,32 @@ class LineLengthAnalyzer(FileAnalyzer):
         self._line_length_exceeded_listeners.append(line_too_long_listener)
 
 
-class LineLengthExceededListener:
+class LineLengthExceededListenerForComments:
     def __init__(self):
         pass
 
-    def on_line_length_exceeded(self, line_length_exceeded_context):
+    def on_line_length_exceeded(self, context):
         """
-        :type line_length_exceeded_context: LineLengthExceededContext 
+        :type context: LineLengthExceededContext 
         """
-        print "Line length exceeded in file {}".format(line_length_exceeded_context.file_context.source_file_name)
+        # Provide feedback if:
+        # 1. The fst.at(line_number) node is a comment node
+        # 2. the fst.at(line_number).next node is on the same line and is a comment node
+        #
+        # TODO: Find a way to find comments after if statements (same line)
+
+        first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
+
+        if context.file_context.line_number == 1:
+            print "=== Full Syntax Tree of source code"
+            print context.source_file_fst.help(True)
+
+            first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
+
+            print "=== FST Node on the respective line"
+            print first_node_on_line.help(True)
+            print "=== Next FST Node"
+            print first_node_on_line.next.help(True)
 
 
 class FileContext:
@@ -141,64 +158,12 @@ class LineLengthExceededContext:
         self.source_file_fst = source_file_fst  # type: RedBaron
 
 
-def analyze_line(context):
-    """
-    :type context: LineLengthExceededContext 
-    """
-    if context.file_context.line_number == 1:
-        print "=== Full Syntax Tree of source code"
-        print context.source_file_fst.help(True)
-
-        first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
-
-        print "=== FST Node on the respective line"
-        print first_node_on_line.help(True)
-        print first_node_on_line.next.help(True)
-
-
-def analyze_file(filename):
-    with open(filename) as source_code_file:
-        file_contents = source_code_file.read()
-
-    with open(filename) as source_code_file:
-        for i, line_code in enumerate(source_code_file):
-            line_number = i + 1
-
-            if len(line_code) > MAX_LINE_LENGTH:
-                print_line(line_number, line_code, too_long=True)
-                context = LineLengthExceededContext(
-                    file_context=FileContext(
-                        line_number,
-                        line_code,
-                        filename
-                    ),
-                    source_file_fst=RedBaron(file_contents)
-                )
-
-                analyze_line(context)
-            else:
-                print_line(line_number, line_code, too_long=False)
-
-
-def print_line(line_number, line_code, too_long=False):
-    validity_char = "✓" if not too_long else "✗"
-
-    print "[{:>3s}] {} {}".format(str(line_number), validity_char, line_code.rstrip())
-
-
 if __name__ == "__main__":
-    # filename = "./input_files/single_line_too_long.py"
-    # filename = "./input_files/comment_after_statement_same_line.py"
-
-    # analyze_file(filename)
-
-    # with open(filename) as source:
-    #     source_fst = RedBaron(source.read())
-    #
-    #     print source_fst.dumps()
+    filename_1 = "./input_files/single_line_too_long.py"
+    filename_2 = "./input_files/comment_after_statement_same_line.py"
 
     line_length_analyzer = LineLengthAnalyzer()
-    line_length_analyzer.add_line_length_exceeded_listener(LineLengthExceededListener())
+    line_length_analyzer.add_line_length_exceeded_listener(LineLengthExceededListenerForComments())
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)
