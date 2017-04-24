@@ -3,6 +3,8 @@ from redbaron import RedBaron
 import abc
 import os
 
+# TODO: requirements.txt/setup.py for pip
+
 class SourceCodeFileFinder:
     def __init__(self):
         pass
