@@ -3,17 +3,6 @@ from redbaron import RedBaron
 import abc
 import os
 
-MAX_LINE_LENGTH = 100
-
-
-# General algorithm is something like:
-# for source_file in codebase:
-#     for line in source_file:
-#         if line.length > MAX_LINE_LENGTH
-#             line_fst = RedBaron(line.strip()) # Strip to prevent indentation errors
-#             analyse(line_fst)
-
-
 class SourceCodeFileFinder:
     def __init__(self):
         pass
