@@ -1,9 +1,16 @@
 # coding=utf-8
-from redbaron import RedBaron
+from redbaron import RedBaron, Node, CommentNode
 import abc
 import os
 
+NODE_TYPE_COMMENT = 'comment'
+
 # TODO: requirements.txt/setup.py for pip
+
+
+class CaseType:
+    COMMENT = 'comment'
+
 
 class SourceCodeFileFinder:
     def __init__(self):
@@ -116,24 +123,111 @@ class LineLengthExceededListenerForComments:
         """
         :type context: LineLengthExceededContext 
         """
-        # Provide feedback if:
-        # 1. The fst.at(line_number) node is a comment node
-        # 2. the fst.at(line_number).next node is on the same line and is a comment node
-        #
         # TODO: Find a way to find comments after if statements (same line)
 
         first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
 
-        if context.file_context.line_number == 1:
-            print "=== Full Syntax Tree of source code"
-            print context.source_file_fst.help(True)
+        comment_too_long_case = self.find_comment_too_long_case_on_line(first_node_on_line, context)
 
-            first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
+        if comment_too_long_case:
+            print '*** DETECTED COMMMENT THAT IS TOO LONG {} ***'.format(comment_too_long_case.line_length_exceeded_context.file_context.line_number)
 
-            print "=== FST Node on the respective line"
-            print first_node_on_line.help(True)
-            print "=== Next FST Node"
-            print first_node_on_line.next.help(True)
+    def find_comment_too_long_case_on_line(self, node, context):
+        """
+        :type node: Node
+        :type context: LineLengthExceededContext 
+        :rtype: CommentTooLongCase 
+        """
+        comment_node = self.detect_comment_node_on_same_line(node)
+        if not comment_node:
+            return None
+
+        return LineLengthExceededCase(context, node, CaseType.COMMENT)
+
+    # TODO: Move elsewhere
+    def detect_comment_node_on_same_line(self, node):
+        """
+        :type node: Node 
+        """
+        current_node = node
+
+        while self._nodes_are_on_same_line(current_node, node):
+            if current_node.type == NODE_TYPE_COMMENT:
+                return current_node
+
+            tmp_node = current_node.next
+            if not tmp_node:
+                tmp_node = current_node.next_intuitive
+
+            current_node = tmp_node
+
+        return None
+
+    # TODO: Move elsewhere
+    def _nodes_are_on_same_line(self, node, other_node):
+        """
+        :type node: Node 
+        :type other_node: Node 
+        :rtype: bool 
+        """
+        if not node or not other_node:
+            return False
+
+        if not self._node_is_on_single_line(node) or not self._node_is_on_single_line(other_node):
+            return False
+
+        node_box = node.absolute_bounding_box
+        other_node_box = other_node.absolute_bounding_box
+
+        if node_box.top_left.line != other_node_box.top_left.line:
+            return False
+
+        return node_box.bottom_right.line == other_node_box.bottom_right.line
+
+    # TODO: Move elsewhere
+    def _node_is_on_single_line(self, node):
+        """
+        :type node: Node
+        :rtype: bool
+        """
+        bounding_box = node.absolute_bounding_box
+
+        return bounding_box.top_left.line == bounding_box.bottom_right.line
+
+
+class LineLengthExceededCase:
+    def __init__(self, context, node, case_type):
+        """
+        :type context: LineLengthExceededContext 
+        :type node: Node
+        :type case_type: str 
+        """
+        self._context = context
+        self._node = node
+        self._case_type = case_type
+
+    def get_line_number(self):
+        return self._context.file_context.line_number
+
+    def get_line_contents(self):
+        return self._context.file_context.line_content
+
+    def get_source_file_name(self):
+        return self._context.file_context.source_file_name
+
+    def get_offending_node(self):
+        return self._node
+
+    def get_case_type(self):
+        return self._case_type
+
+
+
+
+class CommentTooLongCase:
+    def __init__(self, comment_node, line_length_exceeded_context):
+        self.comment_node = comment_node  # type: CommentNode
+        self.line_length_exceeded_context = line_length_exceeded_context  # type: LineLengthExceededContext
 
 
 class FileContext:
@@ -158,4 +252,4 @@ if __name__ == "__main__":
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)
-    code_analyzer.analyze_directory("./input_files")
+    code_analyzer.analyze_file(filename_2)
