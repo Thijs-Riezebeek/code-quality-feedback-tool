@@ -128,13 +128,20 @@ def get_logging_level_from_verbosity(args):
     else:
         return logging.WARNING
 
-if __name__ == "__main__":
+
+def set_up_command_line_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', dest='verbose', action='store_true')
     parser.add_argument('-vv', dest='very_verbose', action='store_true')
     args = parser.parse_args()
 
-    logging.basicConfig(filename='output/long.txt', level=get_logging_level_from_verbosity(args))
+    return args
+
+if __name__ == "__main__":
+    # TODO: Rename all 'line length exceeded stuff' to 'line length violation'
+    args = set_up_command_line_arguments()
+
+    logging.basicConfig(level=get_logging_level_from_verbosity(args))
 
     filename_1 = "./input_files/single_line_too_long.py"
     filename_2 = "./input_files/comment_after_statement_same_line.py"
