@@ -1,6 +1,7 @@
 from abc import abstractmethod
 
 from cases import LineLengthExceededCase, CaseType
+from contexts import LineLengthExceededContext
 
 NODE_TYPE_COMMENT = 'comment'
 
@@ -26,13 +27,18 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
         :type context: LineLengthExceededContext 
         """
         # TODO: Find a way to find comments after if statements (same line)
-
-        first_node_on_line = context.source_file_fst.at(context.file_context.line_number)
+        line_number = context.file_context.line_number
+        try:
+            first_node_on_line = context.source_file_fst.at(line_number)
+        except IndexError:
+            # Sometimes RedBaron doesn't understand multi-line strings correctly
+            file_name = context.file_context.source_file_name
+            return
 
         comment_too_long_case = self.find_comment_too_long_case_on_line(first_node_on_line, context)
 
         if comment_too_long_case:
-            print '*** DETECTED COMMMENT THAT IS TOO LONG {} ***'.format(comment_too_long_case.get_line_number())
+            pass
 
     def find_comment_too_long_case_on_line(self, node, context):
         """
