@@ -1,8 +1,11 @@
 # coding=utf-8
+import argparse
+
 from baron import ParsingError
-from redbaron import RedBaron, Node, CommentNode
+from redbaron import RedBaron
 import abc
 import os
+import logging
 
 # TODO: requirements.txt/setup.py for pip
 from contexts import LineLengthExceededContext, FileContext
@@ -44,6 +47,7 @@ class CodeAnalyzer:
         with open(file_path) as file:
             file_contents = file.read()
 
+        logging.debug('Analyzing "{}"'.format(file_path))
         for file_analyzer in self._file_analyzers:
             file_analyzer.analyze(file_path, file_contents)
 
@@ -79,6 +83,7 @@ class LineLengthAnalyzer(FileAnalyzer):
                     source_file_fst = RedBaron(file_contents)
                 except ParsingError as parse_error:
                     # Should probably be a return
+                    logging.warn('Failed to parse {} with RedBaron'.format(file_path))
                     continue
 
             context = LineLengthExceededContext(
@@ -102,7 +107,7 @@ class LineLengthAnalyzer(FileAnalyzer):
     def _debug_line(self, line_number, line_contents, too_long=False):
         validity_char = "✓" if not too_long else "✗"
 
-        print "[{:>3s}] {} {}".format(str(line_number), validity_char, line_contents.rstrip())
+        logging.info("[{:>3s}] {} {}".format(str(line_number), validity_char, line_contents.rstrip()))
 
     def _notify_listeners(self, context):
         """
@@ -115,7 +120,22 @@ class LineLengthAnalyzer(FileAnalyzer):
         self._line_length_exceeded_listeners.append(line_too_long_listener)
 
 
+def get_logging_level_from_verbosity(args):
+    if args.very_verbose:
+        return logging.DEBUG
+    elif args.verbose:
+        return logging.INFO
+    else:
+        return logging.WARNING
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-v', dest='verbose', action='store_true')
+    parser.add_argument('-vv', dest='very_verbose', action='store_true')
+    args = parser.parse_args()
+
+    logging.basicConfig(filename='output/long.txt', level=get_logging_level_from_verbosity(args))
+
     filename_1 = "./input_files/single_line_too_long.py"
     filename_2 = "./input_files/comment_after_statement_same_line.py"
 

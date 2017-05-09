@@ -1,5 +1,7 @@
 from abc import abstractmethod
 
+import logging
+
 from cases import LineLengthExceededCase, CaseType
 from contexts import LineLengthExceededContext
 
@@ -33,6 +35,7 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
         except IndexError:
             # Sometimes RedBaron doesn't understand multi-line strings correctly
             file_name = context.file_context.source_file_name
+            logging.warn('RedBaron failed to find a node on line {} in file {}'.format(line_number, file_name))
             return
 
         comment_too_long_case = self.find_comment_too_long_case_on_line(first_node_on_line, context)
