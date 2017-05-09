@@ -2,8 +2,10 @@ from abc import abstractmethod
 
 import logging
 
+import feedback
 from cases import LineLengthExceededCase, CaseType
 from contexts import LineLengthExceededContext
+from feedback import FeedbackFactory
 
 NODE_TYPE_COMMENT = 'comment'
 
@@ -65,6 +67,7 @@ class LineLengthViolationCounter(LineLengthExceededListener):
 class LineLengthExceededListenerForComments(LineLengthExceededListener):
     def __init__(self):
         LineLengthExceededListener.__init__(self)
+        self._feedback_factory = FeedbackFactory()
 
     def on_line_length_exceeded(self, context):
         """
@@ -83,7 +86,8 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
         comment_too_long_case = self.find_comment_too_long_case_on_line(first_node_on_line, context)
 
         if comment_too_long_case:
-            pass
+            comment_feedback = self._feedback_factory.comment(context.file_context)
+            feedback.emit(comment_feedback)
 
     def find_comment_too_long_case_on_line(self, node, context):
         """
