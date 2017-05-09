@@ -1,0 +1,930 @@
+Notes:
+
+- We should treat docstrings for functions as comments in the following cases:
+It is the first node in a function definition
+It has no parent (thus is not part of an assignment, function call, etc).
+
+Reasons:
+ - Comments            : 687
+ - Expressions         :  31
+ - Expressions in if   :  18
+ - Print statements    : 163
+ - Long Strings        :  53
+ - Function Call       :   9
+ - Function Definition :   1
+ - Miscellaneous       :  22
+ - Combo               :   1
+
+Comment:
+[  5] ✗ #Opdracht 3: Laat zien dat alle even getallen tot 1000 te schrijven zijn als de som van 2 priemgetallen
+[  5] ✗ #Opdracht 1: Een programma dat de duizendste priemgetal en de lijst van alle 1000 priemgetallen print
+[ 14] ✗         # Als het laatste nummer niet in dictionary zit, zet het getal dan in een lijst
+[ 58] ✗ # elk component random bepalen. dan afstand in y en x berekenen. vervolgens rest van stappenplan uitvoeren.
+[166] ✗ # heb een ander statement gekozen dan none omdat hij automatisch none geeft aan het einde van een reeks en mij het niet lukte om dat er uit te krijgen.
+[ 49] ✗ # ik heb minigi/(10**0.5) gedaan omdat de standaarddeviatie offiecieel keer 1/sqrt(n) moet (http://www.hulpbijonderzoek.nl/standaarddeviatie/)
+[ 22] ✗ #b is een component van de riemannsom. door ze allemaal bij elkaar op te tellen krijg je totale riemannsom.
+[ 98] ✗ # eerst worden alles plaatsen (in lijst) die horen bij 13 december in een lijst gestopt. nu weet je op welke plek de temp van 13 december staat
+[ 24] ✗ # In deze opgave heb ik bewezen dat alle even getallen tussen 2 en 1000 bestaan uit een 'bepaalde' combinatie van priemgetallen. ik ben gestopt met loopen op het moment\
+[ 25] ✗ # dat er eenmaal 1 combinatie van priemgetallen het volgende even getal vormde. Hieronder heb ik getracht aan te geven uit welke priemgetallen elke even getal bestond\
+[ 44] ✗ # In eerste instantie heb ik gekeken welke delers een "bepaald getal" heeft(begonnen met 220 en 284), vervolgens heb ik deze in een lijst geplaatst\
+[ 45] ✗ # en daarvan de som berekend(mbv een defenitie). Adhv de uitkomst hiervan heb ik uitgezocht welke delers die som had. Daarna heb ik een while loop gebruikt om\
+[ 46] ✗ # ervoor te zorgen dat ik een loop krijg voor getallen van 285 en hoger, zodat mijn programma de volgende bevriende getallen zou vinden, hij vond echter 496, \
+[ 15] ✗     returns the outcome for the game rock-paper-scissors with 2 players: P1 is Player 1, P2 is Player 2
+[ 25] ✗         # correctie voor het geval een van de twee spelers iets anders dan 'rock', 'paper' of 'scissors' invullen
+[ 56] ✗     Yikes is a function that has one argument(x) and uses the multadd method to calculate the generated function of x
+[ 79] ✗     Takes a random integer in the range 0-100 and returns true if the number is divisible by 3; else it will return false
+[ 98] ✗     This function calculates the cumulative value of  previous numbers in a list, including the number itself and then it will place the outcome-values in a newlist.
+[119] ✗     This function searches whether a value (w) is in a given list and it returns the position of that particular number in the given list
+[131] ✗     # In case of a list with all negative values, the method will now find the maximum value out of the negative numbers
+[213] ✗ # trying to find the position of a number in a list. if the number is not in the list, the function will let you know.
+[ 25] ✗ This program will plot the graphs of the functions: sin(x) and cos(x) in a x-range 0 till 2pi and an y-range -1 till 1.
+[ 28] ✗ #sinxlist is a list of x-values wherefore the functions will be performed and the graphs will be plotted
+[ 33] ✗ # sinylist is a list of output values for the sinxlist-inputvalues on which the function sin(x) has been performed
+[ 38] ✗ #cosylist is a list of output values for the sinxlist-inputvalues on which the function sin(x) has been performed
+[  7] ✗ # I couldn't finish this exercise before the deadline, I will try to complete it during coming weekend. Thanks in advance for the correction of my work.
+[ 11] ✗ # en ben daarom niet in staat (geweest) om er nog uitgebreid naar te kijken(had oa de hacker nog willen doen), sorry
+[ 21] ✗ # delta c will decline with the same ratio as sigma, as you can see above where sigma has been divided by 2
+[ 25] ✗     Calcuates the sum of the formula for chi^2 with a 'for' loop for every x and corresponing y and sigma values
+[ 50] ✗ This program will calculate the y-value(c_best) of a horizontal line which fits the distribution of a given dataset best, using def chi_square.
+[ 12] ✗ # en ben daarom niet in staat (geweest) om er nog uitgebreid naar te kijken(had oa de hacker nog willen doen), sorry
+[ 43] ✗     # In case of a list with all negative values, the method will now find the maximum value out of the negative numbers
+[ 54] ✗     # In this way y find_minimum will select and remember automatically the first value from the list and then compares it to rest of the numbers in a list
+[ 63] ✗     Returns the integral for a given function with the Monte Carlo Method. 'Amount' is the number of points the program will test for and calculate the ratio.
+[ 69] ✗     # The points on the graph where the program will calculate the minimum and maximum for in order to get the right boxsize is less important here\
+[ 87] ✗     #Correction in order to get the right output for the integral(when the minimum of the function lies above the x-axis)
+[ 17] ✗     Prints the population read from a CSV file, containing years in column 2 and population / 1000 in column 3.
+[ 38] ✗                 # places column 2 and 3 from an file in a dictionary with column 2 = key and column 3 = item
+[ 49] ✗     # In case of a list with all negative values, the method will now find the maximum value out of the negative numbers
+[ 60] ✗     # In this way y find_minimum will select and remember automatically the first value from the list and then compares it to rest of the numbers in a list
+[ 81] ✗ ######################################################################################################################
+[ 16] ✗     Takes a list and returns a dictionary with the last digit from a number = key and the number itself = item
+[ 52] ✗     Returns 'True' if two balls with radii r1 and r2 will collide at positions x1,y1,z1 for ball 1 and x2,y2,z2 for ball 2 and returs 'False' if not.
+[ 65] ✗     @return:  horizontal and vertical dispacement of a ball within a box with limits (0,10) for x an y and time step 'dt'.\
+[ 80] ✗          # if the ball bounces against a wall, it will to move in the opposite way, and its position will follow from x_end = 10 - (x_end - 10)
+[ 85] ✗         # if the ball bounces with a negative speed against the lowerlimit wall its displacement will follow from x_end = - x_end
+[ 97] ✗          # if the ball bounces against a wall, it will to move in the opposite way, and its position will follow from y_end = 10 - (y_end - 10)
+[102] ✗         ## if the ball bounces with a negative speed against the lowerlimit wall its displacement will follow from y_end = - y_end
+[ 38] ✗     #deeltjes_speed geeft de snelheid in de x en y richting op basis van de random snelheid hierboven
+[223] ✗                 # pythagoras om x en y afstanden tussen de deeltjes om te zetten in de kortste afstand tussen twee deeltjes
+[228] ✗         # afstands_lijst is een lijst met de gemiddelde afstand tussen de deeltjes gedurende de tijd
+[234] ✗     @return: bekijkt mbv deeltje_step2  en deeltjes_list na hoeveel tijd de helft van het aantal deeltjes\
+[336] ✗ # Opgave 1 d) --> invullen bij 1 c) de tijd voordat de helft van het antal ballen door het gat is verdwenen wordt dan ±2x zo klein
+[ 66] ✗         # deelt de data op in strings, zodat temperatuur en datum als afzonderlijke elementen worden gezien
+[ 69] ✗         #datum en minimum temperatuur worden opgeslagen totdat er weer een nieuwe waarde wordt gevonden\
+[ 95] ✗         # deelt de data op in strings, zodat temperatuur en datum als afzonderlijke elementen worden gezien
+[ 98] ✗         #datum en maximum temperatuur worden opgeslagen totdat er weer een nieuwe waarde wordt gevonden\
+[112] ✗     @return: de lengte van de periode waarvoor de temperatuur uit een bestand niet boven het vriespunt is gekomen
+[124] ✗         # deelt de data op in strings, zodat temperatuur en datum als afzonderlijke elementen worden gezien
+[127] ✗         #Zodra de maximum temperatuur onder 0 komt begint de teller en wordt deze opgeslagen wanneer deze langer\
+[142] ✗     @return: een lijst met voor elk jaar de maximum temperatuur gemeten op 13 december in de 20e eeuw
+[152] ✗         # deelt de data op in strings, zodat temperatuur en datum als afzonderlijke elementen worden gezien
+[220] ✗ #Voert functie uit en slaat output op als lijst met 99 waardes voor het gebruikt bij histogram en plot
+[ 25] ✗         # deelt de data op in strings, zodat temperatuur en datum als afzonderlijke elementen worden gezien\
+[ 11] ✗     for i in range(2,getal):         # Je doorgaat de if loop en kijkt voor welke i de deling met het getal een 0 restwaarde geeft.
+[ 12] ✗         if getal%i == 0:             # Als die i gevonden is dan stopt de loop en gaat het door naar getal + 1
+[ 17] ✗             #print getal, 'is een priemgetal'     # is er geen i gevonden in de range van 2 tot het getal dan is getal alleen deelbaar door 1 en zichzelf.
+[ 18] ✗             lijst.append (getal)                  # het priemgetal wordt toegevoegd aan de lijst met gevonden priemgetallen
+[ 32] ✗     for i in range(2,getal): # Je doorgaat de if loop en kijkt voor welke i de deling met het getal een 0 restwaarde geeft.
+[ 33] ✗         if getal%i == 0:        # Als die i gevonden is dan stopt de loop en gaat het door naar getal + 1
+[ 35] ✗     else:                           # is er geen i gevonden in de range van 2 tot het getal dan is getal alleen deelbaar door 1 en zichzelf.
+[ 36] ✗             lijst.append (getal)    # het priemgetal wordt toegevoegd aan de lijst met gevonden priemgetallen
+[ 40] ✗ #de volgende code berekent de verschilwaardes tussen twee volgende priemgetallen en zet die in een lijst.
+[ 42] ✗ for n in range(len(lijst)-1): # Neem de lengte van de Lijst -1, zodat niet voorbij het laatste element wordt gegaan, want n + 1 bestaat dan niet.
+[ 43] ✗     a = lijst[n+1]            # a - b, de eerstevolgende priemgetal - eerdere priemgetal in de lijst, voor elk opvolgende priemgetallen.
+[ 48] ✗ #Om de grootste verschilwaarde te vinden, is er gekozen om te beginnen met een verschilwaarde gelijk aan verschil [0]
+[ 18] ✗ for i in range(4,n,2):               # neem de range in stappen van 2, dus alle even getallen van 4 tot 1001.
+[ 19] ✗     ikhebgeenpaargevonden = True        # zijn voor alle i een som te vinden van twee priemgetallen? Dan is de Bolean expression false.
+[ 20] ✗     for pr1 in lijst:                   # Zit er een even getal tussen die geen som van twee priemgetallen heeft -> Bolean expression = True
+[ 21] ✗         for pr2 in lijst:                # De for loop in for loop doorloopt elke som van priemgetallen voor desbetreffende getal i.
+[ 31] ✗ #Als het bevriende getallen zijn, moeten de som van de delers van getal B, getal A als uitkomst hebben.
+[ 41] ✗     getalA += 1             #delersA neemt alle getallen i in, waarmee getalA deelbaar door is, evenzo geldt delersB voor getalB.
+[ 56] ✗     if getalA == somdelerB and getalA > sum(delersA):         # getalA moet groter zijn dan de som van zijn delers, omdat
+[ 57] ✗         print getalA, "en", getalB, "zijn bevriende getallen" # je anders mogelijk getalA terugkrijgt. bijv.: 6 = 1 + 2 + 3 = 6
+[ 59] ✗         if len(indexA) == n:            #de len(indexA) houdt het aantal bevriende getallenparen bij, niet de exacte getallenparen.
+[  1] ✗ list1 = []                          #Het optellen van priemgetallen om alle even getallen van 4 tot 1000 te kunnen maken / goldbach
+[ 11] ✗ list1 = []                                    #code om het grootste aantal opeenvolgende niet-priemgetallen te vinden onder de 10.000
+[  5] ✗ #Ik weet niet wat er misgaat in m'n notatie, maar hij geeft geen foutmelding en toch krijg ik niks te zien.
+[ 11] ✗ def data_fit():         #Definiëert de functie met de gegeven data en de bijbehorende fout, geeft tevens plot van deze data
+[ 23] ✗ def best_value_c():     #Definiëert de functie die het Chi kwadraat en de beste waarde van f(x)=c geeft voor de gegeven data.
+[ 46] ✗ #Ik krijg het niet voor elkaar om zo zonder ondersteuning de onzekerheidswaarde voor c te berekenen.
+[ 47] ✗ #Ik begrijp wel dat hij voor de laagste Chi waarde+1 weer opnieuw moet zoeken naar een gelijke Chi waarde en dan
+[ 48] ✗ # de daarbij behorende C's te printen (o.i.d.), maar het lukt me nu niet dat te doen zonder de rest van mijn functie om zeep te helpen.
+[ 22] ✗ def monte_carlo(xmin, xmax, ymin, ymax, functie, aantal_worpen):        #Definiëert de Monte Carlo functie om een integraal te bepalen
+[ 23] ✗     goedbovenx_x = []                                                   # met een gegeven xmin, xmax, ymin, ymax, de functie en het
+[ 24] ✗     goedonderx_x = []                                                   # aantal worpen; des te meer worpen, des te preciezer de integraal
+[ 55] ✗     xlist = numpy.arange(0, 10, 0.001)    # Plaats gegeven in een x en y list voor de plot
+[ 22] ✗ def riemann(start, eind, functie):    #Definiëert de functie die een Riemannsom uit zal voeren, met een gegeven start en eind waarde en een gegeven functie.
+[ 35] ✗     xlist2 = numpy.arange(0,10, 0.001)    # Zet gegevens van de functies in een x- en y lijst voor de plot
+[  7] ✗ # Opmerking: geen tijd meer genomen, om alles van commentaar te voorzien. Ik hoop dat het toch een beetje udidelijk is wat er gebeurt.
+[ 17] ✗ def ballen(x_source, y_source, aantal_ballen):      # De functie die de ballen in de vorm van tuples genereert en in een lijst stopt
+[ 21] ✗         x = x_source                                # De x-coördinaat van de startlocatie van de bal
+[ 22] ✗         y = y_source                                # De y-coördinaat van de startlocatie van de bal
+[ 23] ✗         v = (random.random()/10)                    # Geeft de bal een willekeurige snelheid tussen 0 en 0.1, dient gedeactiveerd te worden voor 'd'
+[ 24] ✗         #v = (random.random()/5)                    # Geeft de bal een willekeurige snelheid tussen 0 en 0.2, dient geactiveerd te worden voor 'd'
+[ 25] ✗         a = (random.random()*2*math.pi)             # Geeft een willekeurige richting in de vorm van een hoek tussen 0 en 2 pi radialen
+[ 26] ✗         vx = math.cos(a) * v                        # Genereert de verplaatsingscomponent in de richting van de x-as
+[ 27] ✗         vy = math.sin(a) * v                        # Genereert de verplaatsingscomponent in de richting van de y-as
+[ 28] ✗         ballen_lijst.append((x, y, vx, vy))         # Verwerkt de tuples van de ballen in een lijst, methun locatie en snelheid in x- en y-richting
+[ 33] ✗ def deeltje_in_doos(xmin_doos, xmax_doos, ymin_doos, ymax_doos, aantal_ballen, tijdstappen_persec, tijdsduur): # Functie die de ballen in een fictieve doos stopt en laat bewegen gedurende een bepaalde periode.
+[ 74] ✗                 #if 0.8 <= x <= 0.9:        #Activeer tegel 74 t/m 78 om een 'gat' in de 'doos' te simuleren
+[111] ✗     #Onderstaande plot de grafiek van het percentage van het aantal ballen dat zich rechts van x=0.5 bevind t.o.v. de tijd
+[125] ✗     # Onderstaande plot de grafiek die aangeeft hoeveel ballen er nog in de doos zijn, t.o.v. de tijd
+[127] ✗     # Voor een tweemaal zo snelle afname dient de snelheidsfunctie in regel 23 gedeactiveerd te worden en in regel 24 geactiveerd te worden
+[134] ✗ deeltje_in_doos(0, 1, 0, 1, 100, 10, 1000) # Opgegeven: de afmetingen van de doos: x=0 tot x=1 en y=0 tot y=1, tevens het aantal ballen (100), de hoeveelheid tijdstappen per seconde (10) en de tijdsduur in seconden (1000)
+[  6] ✗ import matplotlib.pyplot as plt         # Importeert de package die nodig is om de data straks te kunnen plotten
+[  8] ✗ def temperatuur_bilt():                 #Functie die door een tweetal data bestanden zal lopen en met die gegevens, een aantal conclusies kunnen trekken
+[  9] ✗     data_max_temp = (open('TX_STAID000162.txt')) #Het data bestand met de maximum temperaturen gemeten in de Bilt vanaf 1901
+[ 10] ✗     data_min_temp = (open('TN_STAID000162.txt')) #Het data bestand met de minimum temperaturen  gemeten in de Bilt vanaf 1901
+[ 12] ✗     data_max_list = [] #Een lijst waar enkel de data (datum) van de maxima temperaturen in komen te staan
+[ 14] ✗     data_min_list = [] #Een lijst waar enkele de data (datum) van de minima temperaturen in komen te staan
+[ 18] ✗     for line in data_max_temp: # Deze for loop doorloopt data bestand met alle gegevens mbt maxima temperaturen
+[ 19] ✗         line_number_max += 1 #de actie die ervoor zorgt dat na de 20 regels de if statement 'true' is
+[ 20] ✗         if line_number_max >= 21: #Vanaf de 21e regel wordt er in elke regel een stukje geknipt en wordt zowel de datum als de temperatuur in een aparte lijst gestopt
+[ 24] ✗     max_temp = 0  #De parameter die overschreven wordt bij een gevonden hogere temperatuur, totdat dit de hoogste temperatuur is
+[ 25] ✗     max_temp_number = -1 #De parameter die zal gaan tellen, zodat er bijgehouden kan worden op de hoeveelste positie de hoogste temperatuur zich in de lisjt bevind.
+[ 27] ✗         max_temp_number += 1 #De actie de evoor zorgt dat er bijgehouden wordt bij welk element in de lijst de for loop is aangekomen
+[ 28] ✗         if temp >= max_temp: #Door deze if statement wordt uiteindelijk de hoogste temperatuur opgeslagen die er in de lijst staat
+[ 30] ✗             max_temp_location = max_temp_number #De actie die de parameter overschrijft die de regelnummering bijhoudt
+[ 32] ✗     max_datum = data_max_list[max_temp_location]   #Omdat de lengte van de datum en temperatuurlijst met elkaar corresponderen geeft deze actie, de datum waar de hoogste temperatuur bij hoort
+[ 34] ✗     #In de twee onderstaande for loops met if statemens, gebeurt exact hetzelfde als in de bovenstaande twee, maar dan met de dataset met minimum temperaturen.
+[ 53] ✗     vorst_dagen_lijst = [] #Een lijst die gevuld zal worden met dagen dat de maximum temperatuur niet boven de 0 graden uitkwam
+[ 54] ✗     vorst_dagen = 0 #Een parameter die zal bij houden hoeveel dagen achtereen de temperatuur niet boven de 0 graden uitkwam
+[ 56] ✗     datum_teller = [] #De lijst die gaat bijhouden op welke data de temperatuur wel boven 0 graden kwam.
+[ 62] ✗             datum_teller.append(datum) #Wordt de bijbehorende datumteller in de datum tel lisjt gestopt, waardoor er dus bijgehouden kan orden bij het hoeveelste element in de for loop we zijn
+[ 63] ✗             vorst_dagen_lijst.append(vorst_dagen) #Het aantal achtereen getelde vorstdagen wordt in deze lijst opgeslagen
+[ 64] ✗             vorst_dagen = 0 #Na het bovenstaande wordt de parameter die de vorstdagen telde weer gereset, zodat niet alle vorstdagen bij elkaar opgeteld worden, maar alleen de vorstdagen zonder onderbreking van dooi
+[ 66] ✗     dag_number = -1 #De parameter die gaat bijhouden bij het hoeveelste element in de vorstdagenlijst we zijn
+[ 67] ✗     dagen_vorst = 0 #de parameter die overschreven zal worden, zodra de reeks dagen vorst achtereen groter is dan de vorige reeks
+[ 68] ✗     for reeks_vorst in vorst_dagen_lijst: #Een for loop die door de opgeslagen reeksen van vorstdagen loopt
+[ 70] ✗         if reeks_vorst >= dagen_vorst: #De if statement die onderzoekt of het element uit de vorstdagenlijst een grotere reeks betreft dan al eerder was gevonden
+[ 71] ✗             dagen_vorst = reeks_vorst #Als dat zo is dan overschrijft de gevonden reeks de parameter dagen_vorst
+[ 72] ✗             dag_location = dag_number #Als de grootste reeks gevonden is, dan is via de teller bijgehouden op welke plek deze reeks vorstdagen eindigde in de lijst
+[ 74] ✗     datum_langste_vorst = data_max_list[datum_teller[dag_location]] #Door middel van de locatie van het corresponderende datumelement, in de data teller te stoppen en uiteindelijk in de oorspronkelijke datum lijst, wordt de dag gevonden waarop de langste vorstperiode eindigde
+[ 77] ✗     temp_dec = [] #De lijst die de maximum temperaturen van 13 december in de 20e eeuw gaat bijhouden
+[ 78] ✗     for data in data_max_list: #Een for loop die door de lijst met alleen de data (datum) gaat lopen
+[ 80] ✗         if data[4:] == '1213': #If statement die ervoor zorgt dat alleen de '13 december's' worden behandeld
+[ 81] ✗             temp_dec.append(max_temp_list[dec_dag]) #Als er een 13 december wordt gevonden, dan wordt door de getelde parameter de corresponderende maximum temperatuur in een lijst gestopt
+[ 82] ✗             if len(temp_dec) == 100: #Er geldt ook dat het alleen om de data uit de 20e eeuw moet gaan, dus zodra de 100 jaren van de 20 eeuw gepasseerd zijn stoppen de loops
+[ 89] ✗     #Activeer onderstaande om de maximum en minimum temperatuur  en bijbehorende data te verkrijgen
+[ 94] ✗     #Activeer onderstaand om de langste periode van dagen waarbij de maximum temperatuur niet boven de 0 graden kwam te verkrijgen, evenals de datum waarop deze eindigde.
+[100] ✗     #Activeer onderstaande om de grafiek te plotten die de maximum temperaturen weergeeft op 13 december (verjaardag Martijn Stegeman) van de afgelopen eeuw
+[246] ✗         if l1[i] == l2[j]:      # then the two index numbers determine the comparison of the numbers
+[247] ✗             l1_2 += [l1[i]]     # finally, the numbers that are the same are appended into a new list
+[ 17] ✗ for sumOfPrimes in range(2, rangeMax + 2, 2):   # the range is determined by the rangeMax variable. With increments of 2,
+[ 19] ✗     firstNumber = 0                             # both variables are reset to 0 every iteration of the loop.
+[ 22] ✗     for primeIndex in range(len(listOfPrimes)):     # this for loop determines the first prime number to be checked.
+[ 24] ✗         for primeIndex2 in range(len(listOfPrimes)):    # a nested for loop determines the second prime number to be tested.
+[ 26] ✗             if listOfPrimes[primeIndex] + listOfPrimes[primeIndex2] == sumOfPrimes: # The numbers from both for loops are checked to see if they equal
+[ 27] ✗                 firstNumber = listOfPrimes[primeIndex]                  # the even number that is being checked (the sumOfPrimes var). The code takes the
+[ 28] ✗                 secondNumber = listOfPrimes[primeIndex2]                # first prime and adds it to every other prime. Then changes the first prime
+[ 29] ✗                                                                         # to the next one in the index and again adds it to every other prime.
+[ 31] ✗                 if firstNumber > secondNumber or firstNumber == secondNumber:   # Then the code checks if the first prime is larger than the second
+[ 32] ✗                                                                                 # prime before printing the answer so no inverse answers will be printed
+[ 33] ✗                                                                                 # like (3,7) and (7,3) for 10. Also if first and second prime are equal it
+[ 34] ✗                                                                                 # will print the answer for example in (3,3) for 6.
+[ 37] ✗             elif listOfPrimes[primeIndex] + listOfPrimes[primeIndex2] > sumOfPrimes:    # this statement stops the if statement that checks the primes
+[ 38] ✗                                                                         # if the sum exceeds the number that is being checked. Because if it does
+[ 39] ✗                                                                         # it can never be the right pair for the number.
+[ 70] ✗     # returns possibleAmicable(numberCheck) = 284. So, possibleAmicable(possibleAmicable(numberCheck)),
+[ 71] ✗     # will return possibleAmicable(284) = 220. And that is equal to the starting value of numberCheck.
+[ 72] ✗     # If so, a message is printed that confirms the amicable pair. Unfortunately, my computer decided not to work
+[ 73] ✗     # anymore and would crash when running the code. Theoretically this should work however, I was not able to
+[  9] ✗ # First the range of the while loop is determined by setting it to match the length of a list of primes
+[ 10] ✗ # that will be generated by the code. If the length of the list is less than the index number from the input,
+[ 16] ✗ nthPrime = input('Please enter which prime number you would like to see: ') # Index number of prime
+[ 17] ✗ listOfPrimes = [2]                      # the list of prime numbers, this will be filled with the code, 2 is preset
+[ 25] ✗     primeCandidate += 2                         # 2 is added to the possible prime number at every iteration, this ensures the analysed numbers
+[ 26] ✗                                                 # are always odd in respect to the base value of 1 (even numbers can't be primes).
+[ 27] ✗     for div in range(2, primeCandidate):        # this checks all numbers in the range of 2 to the possible prime if the possible prime
+[ 28] ✗         if primeCandidate % div == 0:           # is divisable by any of them, if any of these values returns a modulo value of 0,
+[ 30] ✗     if isPrime == True:                         # If, after the loop, isPrime equates to True, the number is added to the list of primes.
+[ 38] ✗ # This code runs through a generated list of primes (in the above code) to find the largest interval between
+[ 39] ✗ # any two consecutive prime numbers in the set. For this, a for loop is used to run through the entire set and check all the possible intervals between
+[ 40] ✗ # consecutive primes. Then, the highest value is stored an printed as output together with the two prime numbers.
+[ 43] ✗ maxDifferenceInPrimes = 0           # variable for storing the largest difference between prime numbers in a certain set.
+[ 48] ✗     differenceInPrimes = listOfPrimes[index] - listOfPrimes[index-1]# a new variable is determined by the difference between two primes
+[ 49] ✗     if differenceInPrimes > maxDifferenceInPrimes:                  # when the previous variable is larger than the largest value thus far found,
+[ 50] ✗         maxDifferenceInPrimes = differenceInPrimes                  # it is stored in the maxDifferenceInPrimes variable.
+[ 51] ✗         primeLower = listOfPrimes[index-1]                          # the upper, and lower limits are also stored in seperate variables
+[ 71] ✗             tijdx.append(tijd) # Zet de eigenschappen van de deeltjes over het tijdinterval in nieuwe lijsten
+[125] ✗                 deeltje[4] = 2 # zorgt dat de deeltjes niet twee keer geteld kunnen worden door de waarde te veranderen in waarde dat geen reactie opwekt
+[128] ✗                     stop += 1 # zorgt dat de halfwaardetijd niet meer veranderd kan worden door de waarde te veranderen in een waarde dat geen reactie opwekt
+[170] ✗                 deeltje[4] = 2 # zorgt dat de deeltjes niet twee keer geteld kunnen worden door de waarde te veranderen in waarde dat geen reactie opwekt
+[173] ✗                     stop += 1 # zorgt dat de halfwaardetijd niet meer veranderd kan worden door de waarde te veranderen in een waarde dat geen reactie opwekt
+[107] ✗                 if i % 10 == 0: #enkel als i deelbaar is door 10, wordt er gestopt met zoeken naar getallen, als meervoud van n
+[ 20] ✗         # Elk niet-priemgetal wordt eruit gehaald. Deler is elk getal tussen 2 en nieuwe waarde prime.
+[ 30] ✗     # Twee getallen in mijn priemgetallenlijst worden gezocht zolang ik nog geen matchend paar heb gevonden voor even_getal.
+[ 16] ✗         # Elk niet-priemgetal wordt eruit gehaald. Deler is elk getal tussen 2 en nieuwe waarde prime.
+[ 48] ✗         # Elk niet-priemgetal wordt eruit gehaald. Deler is elk getal tussen 2 en nieuwe waarde prime.
+[ 66] ✗             grootste_reeks = grootste_reeks - 1 # Het echte verschil tussen twee getallen is reeks - 1.
+[ 70] ✗     # Sommeert elk individuele waarde van de respectievelijke getallen in de gebruikte lijsten om Chi kwadraat te verkrijgen
+[  4] ✗ # Dit programma berekent de integralen van drie gevraagde functies: 1a, 1b en 1c met behulp van de methode van Monte Carlo
+[  4] ✗ # Dit programma berekent de integralen van drie gevraagde functies: 1a, 1b en 1c met behulp van de Riemannsom
+[  3] ✗ # This programm takes a look at the amount of balls in a box with given boundaries, as a function of time.
+[ 20] ✗ # Calculates the velocities for x and y direction for any random taken velocity and inclination 'alpha'
+[ 93] ✗         # For total amount of balls used, they will be contained within the box using the ball_step_without_hole function
+[118] ✗         # Every ball will be compared with any other ball (n), except for itself (n - 1): (n * (n - 1))
+[142] ✗         # For total amount of balls used, they will be contained within the box using the ball_step_with_hole function
+[ 71] ✗ # This function finds the minimum and maximum temperatures in the 20th century with corresponding dates
+[  9] ✗ #Opgave 1: door te kijken of getallen uit de lijst deelbaar zijn door twee wordt gekeken of het even getallen zijn, zo ja: dan komen ze in de nieuwe lijst
+[ 33] ✗ #Opgave 2: voor de tweedegraadsvergelijking worden eerst beide oplossingen berekend. De kleinste oplossing wordt vervolgens als x gekozen
+[ 54] ✗ #Opgave 3: voor alle getallen onder de 100 wordt gekeken welke delers het getal heeft (in de tweede for-loop): van alle kandidaat-delers onder het getal
+[ 55] ✗ #wordt gekeken of het getal deelbaar is door de kandidaat-deler. Als de som van de delers groter is dan het getal komt het in de lijst.
+[ 72] ✗ #Opgave4: Eerst worden 2 x- en 2 y-coordinaten random gekozen van 0 tot 1. De afstand wordt berekend door de absolute lengte te berekenen van de
+[ 73] ✗ #nieuwe positie (x_1 - x_2), (y_1 - y_2). Dit word 10000 keer gedaan en van alle afstanden wordt het gemiddelde genomen.
+[ 90] ✗ #Opgave 5: Eerst worden los van elkaar het inproduct van de twee vectoren en het product van hun absolute lengtes berekend. Vervolgens wordt de
+[ 91] ✗ #hoek tussen de vectoren berekend door de inverse cosinus te nemen van het inproduct gedeeld door het product van hun absolute lengtes. Het resultaat
+[  8] ✗     thisisaprime = 1 #1 staat hier voor "true", dus op dit moment zijn alle kandidaten nog priemgetal
+[ 12] ✗                 candidate+=2       #en wordt de volgende kandidaat genomen (even getallen nooit priem)
+[ 13] ✗                 break     #als er geen priemgetal gevonden is, dan wordt de for loop afgebroken en wordt de volgende priem-kandidaat in deze for loop 'getest'.
+[ 14] ✗     if thisisaprime == 1: #dit is het geval als er geen deler is gevonden en de for loop dus geen 0 van heeft gemaakt
+[ 15] ✗         primes.append (candidate) #In dat geval wordt hier het gevonden priemgetal in de lijst gezet
+[ 26] ✗           basispriem=primes[a] #a staat voor het a'de priemgetal dit is de basispriem, waar een ander priemgetal bij wordt opgeteld
+[ 27] ✗           for b in range (200): #hetzelfde als hiervoor. optelpriem is het priemgetal dat bij a wordt opgeteld
+[ 29] ✗                 if basispriem+optelpriem==evengetal: #vervolgens wordt gekeken of de som gelijk is aan het evengetal (te beginnen met 4)
+[ 31] ✗                     evengetal+=2 #vervolgens worden sommen van priemgetallen met het volgende even getal vergeleken
+[ 11] ✗ # vraag om input van Player 1 en Player 2, ik zet hem achter een hekje zodat u het niet hoeft in te vullen. (Dit doe ik overal)
+[ 69] ✗ # Wanneer de functie not_equal(getal1, getal2) wordt geprint, zal er een boolean True of False komen te staan
+[ 84] ✗ #Dit is een functie die een wiskundige operator voorsteld die eerst twee getallen vermenigvuldigt en daarna een derde getal daarbij optelt
+[123] ✗ #Dit is een functie die de absolute waarde van een getal geeft, door de wortel van het kwadraat te nemen
+[133] ✗ # Dit is een functie die een willekeurig getal neemt tussen -1 en 100 en kijkt of het getal deelbaar is door 3
+[153] ✗ # Op het begin nog geen dobbelsteen gegooid, als de loop een keer is doorlopen wordt de volgende dobbelsteen gegooid
+[166] ✗  # Deze functie heeft een lijst als parameter, en geeft een lijst waarin elk nde element de som is van de elementen 0 t/m n van de parameter
+[175] ✗  # Alle elementen in de parameter worden langsgegaan en elk element wordt bij het totaal opgeteld
+[176] ✗  # Wanneer een nieuw element wordt opgeteld bij het totaal, wordt het nieuwe totaal in de outputlijst gezet
+[203] ✗ # De functie kijkt of de waarde in de lijst staat en zo ja, op welke plaats in de lijst deze waarde voor het eerst voorkomt
+[206] ✗     # Voordat de lijst wordt langsgegaan, is de waarde nog niet gevonden. Vandaar value_is_in_checklist  = 0 (0 is hier niet-waar)
+[211] ✗     #  Als de waarde gevonden wordt, wordt de plaats weergegeven, is value_is_in_checklist  = 0 veranderd in 1, en wordt de loop gestopt
+[219] ✗      # Als na het langsgaan van de hele lijst de waarde niet is gevonden, is de uitkomst 'None'
+[233] ✗     #Alle elementen worden afgegaan. Wanneer een element hoger is dan de elementen daarvoor is dit het nieuwe maximum
+[ 17] ✗ #Voor de plot zijn eerst lijsten gemaakt van de waarden van x en y, vervolgens worden de assen en labels gegeven
+[ 31] ✗ #Voor elke c tussen 39 en 90 wordt chi-kwadraat berekend door de losse termen bij elkaar op te tellen in de tweede for-loop.
+[ 40] ✗ #Als eerste minimale waarde voor chi-kwadraat wordt het eerste leement uit de lijst genomen. Deze wordt vervolgens met alle ander waarden
+[ 41] ✗ #voor chi-kwadraat vergeleken. De kleinste waarde vervangt dan de vorige minimale waarde en uiteindelijk wordt het resultaat geprint
+[ 49] ✗ #Nu moet de onzekerheid worden gevonden, dit wordt gedaan door te kijken welke c past bij de waarde van chi_kwadraat die een hoger
+[ 60] ✗ # Wanneer je alle c 2 maal zo klein neemt, zal de onzekerheid delta c groter worden. Dat is te zien aan de vergelijking voor Chikwadraat
+[ 17] ✗     #Eerst moet de box worden gedefineerd: Als eerste minimum voor yneem ik de waarde van f als functie van de minimale waarde van x
+[ 18] ✗     #Als eerste maximum voor y neem ik 0. Het aantal willekeurige getallen wordt bijgehouden en daarvan wordt bijgehouden welke binnen
+[ 26] ✗     #In deze for-loop worden de extreme waarden van y gevonden door steeds nieuwe waarden met de vorige te vergelijken
+[ 16] ✗ #De beginsituatie bestaat uit een lege lijst waar N waarden voor de oorspronkelijke functie in komen waarvan de x-coordinaat telkens dx hoger is
+[ 17] ✗ #De riemanssom is op het begin nog nul. De waarden van de individuele oppervlaktes worden hier steeds bij elkaar opgeteld
+[ 26] ✗      #In deze for-loop worden de waarden van de functie in de lijst gezet, als de loop klaar is, worden de integratiegrenzen er ook bij gezet
+[ 18] ✗     #Vervolgens voor de andere lines worden de 2de en de 3de kolom geprint, waarbij van de derde kolom een geheel getal wordt gemaakt
+[ 37] ✗     #In de onderstaande for-loop worden alle rijen van de file langsgegaan, en wordt de tweede kolom als key aan de derde kolom als value gekoppeld
+[ 48] ✗ #In deze functie wordt eerst een lijst van de jaren gemaakt, en vervolgens een lijst van de populatie in elk jaar. Deze tweede lijst wordt
+[ 49] ✗ #gemaakt door de value in de dictionary van de vorige opgave die bij het bij het bijpassendejaar(wat de key is) hoort, in de lijst te zetten.
+[ 77] ✗     #Hieronder worden eerst op dezelfde manier als in de vorige opgaven de eerste twee lijsten gemaakt
+[ 82] ✗     #Hieronder wordt een lijst gemaakt met de groei in elk jaar, door de daarbij hoorende formule in te voegen, waarbij gebruik wordt gemaakt van de
+[ 13] ✗ #Hieronder wordt van een lijst met (hele) getallen gekeken wat de remainder is na delen met 10. De remainder is altijd  het minst significante getal.
+[ 28] ✗ #Voor een bepaalde dictionary geeft onderstaande functie bijpassende chart door de lengte van de values te bekijken.
+[ 29] ✗ #Voor elke value krijgt de bijbehorende key een hashtag en de juiste combinaties worden onder elkaar geprint
+[ 59] ✗     #Verolgens wordt gekeken of de afstand tussen de ballen kleiner of gelijk is aan de som van de stralen van de ballen
+[ 83] ✗ #In onderstaande functie wordt allereerst de nieuwe postitie van de bal in x- en y-richting berekend met de formule x = v * t
+[ 88] ✗     #Omdat moet worden meegenomen dat de bal binnen het kader moet blijven zijn een aantal if-statements gemaakt, zoland de bal niet binnen het kader is
+[ 89] ✗     #Wanneer de bal in een bepaalde richting kleiner is dan nul, zou hij dus met die waarde terug moeten zijn gestuiderd, dus dit wordt gecorrigeerd
+[ 91] ✗     #Wanneer de bal groter is dan 10 zou de waarde als hij was teruggestuiterd zijn : 10 - (waarde - 10) en dit is om te schrijven tot 20 - waarde
+[ 10] ✗ # Dit programma berekend en plot de verspreiding in de x-richting van deeltjes met random snelheid in een doos
+[ 12] ✗ # Lijsten met als elementen de snelheden van de deeltjes in x- en y-richting en een lijst met het aantal deeltjes links en rechts:
+[ 17] ✗ # 100 random snelheden worden aangemaakt. Eerst een random absolute snelheid van 0 tot 0.1, dan in de x-richting random snelheid
+[ 18] ✗ # van -absolute snelheid tot plus absolute snelheid. Met pythagoras wordt de snelheid in de y-richting berekend, die random of met 1 of -1 wordt
+[ 33] ✗ # Een lijst met posities (op het begin zijn alle posities (0.25, 0.75). Na elke stap zijn de nieuwe posities in de lijst gezet.
+[ 34] ✗ # Voor deze vraag is alleen x relevant (de beweging in de y-richting heeft geen invloed op  de x-coordinaat). Er worden honderd stappen gezet.
+[ 42] ✗         # De grenzen van de doos zijn aangegeven door de positie na een botsing om te rekenen en de snelheidsrichting na een botsing om de draaien
+[ 74] ✗ # Dit programma berekend en plot de gemiddelde afstand tussen deeltjes over de tijd die op hetzelfde punt in een doos komen
+[ 91] ✗         # De grenzen van de doos zijn aangegeven door de positie na een botsing om te rekenen en de snelheidsrichting na een botsing om de draaien.
+[118] ✗      #Berekenen absolute afstanden tussen alle deeltjes met pythagoras. Niet afstanden tussen deeltje met zichzelf meenemen.
+[145] ✗ # Er zit een gat in de doos nu. Dit programma berekend het aantal deeltjes in de doos na elke seconde en berekend de gemiddelde halfwaardetijd.
+[146] ✗ # Er wordt een lijst met het aantal deeltjes in de doos bijgehouden. Het begin is bijna gelijk aan de vorige programma's. Er moet in het berekenen
+[180] ✗                     # Als y-coordinaat kleiner is dan 0 en x-coordinaat zit tussen 0.8 en 0.9, dan is het deeltje door het gat gegaan.
+[192] ✗     # Het aantal verdwenen deeltjes(deeltjes met positie o en snelheid 0) wordt geteld.
+[219] ✗ # Wanneer de hoeveelheid deeltjes is gehalveerd, wordt de tijd (de plaats in de list) in een list gezet met halfwaardetijden
+[240] ✗ # Dit programma berekend het aantal deeltjes in de doos na elke seconde en berekend de gemiddelde halfwaardetijd. Dit keer is de gemiddelde snelheid van
+[286] ✗                     # Als y-coordinaat kleiner is dan 0 en x-coordinaat zit tussen 0.8 en 0.9, dan is het deeltje door het gat gegaan.
+[307] ✗ # Hier wordt de grafiek geplot voor de deeltjes met hogere snelheid in de doos als functie van de tijd
+[337] ✗ # Vaak is de halfwaardetijd hoger wanneer de snelheid hoger is. Dat is niet te verwachten, omdat de deeltjes sneller alle posities langsgaan
+[338] ✗ # en dus ook sneller bij het gat komen. Het komt ook niet zelden voor dat de halfwaardetijd lager wanneer de snelheid hoger is.
+[  6] ✗ # Deze functie leest files en maakt van de data een lijst. Dit wordt in elke opgave gebruikt. De opgaven zelg beginnen onder deze functie.
+[ 12] ✗    # Hier wordt de file gelezen, de eerste regels in een for-loop overgeslagen(die bestaan in de te gebruiken files niet uit de data)
+[ 17] ✗     # De overige regels met data worden in de lijst met data gezet. Door de split-functie zijn de data zelf zijn ook lijsten.
+[ 25] ✗     # Hier worden de waarden gedefinieerd die uiteindelijk de output vormen, met beginwaarde 0, en worden de files gelezen
+[ 33] ✗     # Twee for-loops gaan alle data van de 20ste eeuw langs. Derde([2]) element van data is de datum, het vierde element temperatuur maal 10.
+[ 34] ✗     # Extreemste temperaturen worden de hoogste en laagste temperatuur (if statements). Bijbehorende datum wordt gedefinieerd.
+[ 55] ✗     # Hier worden de waarden gedefinieerd en worden lege lijsten aangemaakt waar in de code gebruik van wordt gemaakt, met beginwaarde 0.
+[ 63] ✗     # Vorst-perioden worden in een lijst gezet: In for-loop wordt gekeken met (if-statement)  welke dagen de temperatuur onder 0 lag.
+[ 64] ✗     # Aantal dagen vorst-periode  wordt bijgehouden met 'periode'. Wanneer het niet vriest (elif) wordt de periode in de lijst met
+[ 65] ✗     # vries-perioden gezet, de laatste dag in de lijst vorst_jaar gezet en is de periode 0. Als de periode 0 is gebeurt er niets.
+[ 74] ✗     # In een for-loop wordt voor alle vries-perioden in de lijst m.b.v. een if-statement gekeken welke periode de grootste waarde heeft. De bijbehorende
+[ 94] ✗     # In een for-loop worden alle data afgegaan, met een if-statement worden de jaren in de 21ste eeuw ontweken.
+[ 98] ✗             # In een if_statement worden alle data van 13 december geselecteerd, en de bijbehorende temperaturen komen in de lijst.
+[  6] ✗ # Deze functie leest files en maakt van de data een lijst. Dit wordt in elke opgave gebruikt. De opgaven zelg beginnen onder deze functie.
+[ 12] ✗    # Hier wordt de file gelezen, de eerste regels in een for-loop overgeslagen(die bestaan in de te gebruiken files niet uit de data)
+[ 17] ✗     # De overige regels met data worden in de lijst met data gezet. Door de split-functie zijn de data zelf zijn ook lijsten.
+[ 36] ✗     # De code lijkt op de code van opgave b. Er zijn hier wat voorwaarden toegevoegd. Het mag een dag niet vriezen. Dan krijgt buffer_dag waarde 1.
+[ 37] ✗     # Wanneer buffer_dag 2 is, is de periode afgelopen, komt in de lijst en is buffer_dag weer nul. De perioden van 0 dagen worden niet opgeslagen.
+[ 55] ✗     # In een for-loop wordt voor alle vries-perioden in de lijst m.b.v. een if-statement gekeken welke periode de grootste waarde heeft. De bijbehorende
+[ 12] ✗     for i in range(2,k): # Kijk voor het huidige getal of deze deelbaar is door een getal tussen 2 en het huidige getal,
+[ 15] ✗     if(priem == True): # Als aan het einde van de for-loop de variabele priem nog steeds True is, dan is het huidige getal een priemgetal
+[ 23] ✗             if(((priemlijst[l]+priemlijst[m]) == n) and onbekend == True): # Als een combinatie wordt gevonden voor de waarde n, print deze combinatie en verhoog n met 2 (enkel even getallen)
+[ 29] ✗ # Als begingetallen == som_delers2 en begingetallen != som_delers1, dan zijn het bevriende getallen
+[ 39] ✗     for j in range(2,i+1): # Deel het getal i door 2 t/m zichzelf (tot i+1). Als i deelbaar is door j, tel dan deze breuk op bij k en herhaal voor een nieuwe j.
+[ 44] ✗ for l in range(0,len(som_delers)): # Herhaal het vorige stuk code, maar nu met de som_delers van de begingetallen als begingetal.
+[ 50] ✗ for o in range(0,len(begingetallen)): # Gebruik hier het feit dat de rijen van de drie lijsten exact overeenkomen. Loop over een hele lijst en kijk of het begingetal gelijk is
+[ 51] ✗     if(begingetallen[o] == som_delers2[o] != som_delers[o]): # aan som_delers2, maar waarbij deze ongelijk is aan som_delers om getallen die met zichzelf bevriend zijn te vermijden.
+[ 35] ✗     lijst=range(1,exp,1) #lijst waarvan de lengte het aantal keren is waarmee de base met zichzelf vermenigvuldigd moet worden
+[ 53] ✗         if random_val < random_chek_val:                # check if random value is in the function #
+[ 37] ✗     for y in y_val:                                  # calculate central values for the riemann square #
+[ 44] ✗                                                  # sum all the values in the list to find the area of the riemann calculation #
+[ 19] ✗        if key not in a_dict:        # als de key niet in de dictionary is maak dit aan en voeg de value of wel de cijfer in de lijst toe aan de dictionary #
+[ 24] ✗            a_dict[key].append(val)    # als de key er wel in staat moet de value toegevoegd worden in de lijst van de key #
+[ 33] ✗ def chart(dictionary):   # deze functio maakt een output in hashes aan van de lengte van de key value paar #
+[ 36] ✗        print key, len(dictionary[key])*'#'     # print de key en doe de hashes keer de lenthe van de key value paar #
+[ 48] ✗        list_1.append(int(random.random() * 100)) # voor elke lijst voeg ik een aantal random number toe in int formaat omdat de char functie niet werkt met floats #
+[ 45] ✗ def move_ball(ballen, tijd, dt): # hier maak ik een dictioanry die per key en dictionary heeft met een lijst x en y waarden zoals {1:{'x':[x_posities], 'y':[...]}} #
+[ 46] ✗                                 # loop de hele tijd tegen probleem aan dat x waardes kloppen in mijn lijst alleen krijg de hele tijd dezelfde y waardes en dat is raar want dezelfdce functie rekent ze op dezelde manier uit? #
+[ 83] ✗     for index in range(len(a_dic[0]['x'])): # voor de lengte van mijn values in de key x van elke willekeurige bal, maakt niet uit welke eerste key want ze zijn allemaal toch even lang #
+[ 89] ✗             x = a_dic[keys]['x'][index]  # kijkt elke x waarde van de key, keys houd bij welke bal we zijn  en index houd bij welke value we zijn #
+[  5] ✗ def data_maken(data): # file in twee lijsten inlezen, de belangerijke data zijn de temperatuur en de datum #
+[ 28] ✗ data_laag, datum_laag = data_maken(open('/Users/arkin/programming/TN_STAID000162.txt', 'r')) #  hier lees ik de bestanden in twee lijsten #
+[ 43] ✗     index = temp.index(min_temp) # index temperatuur is hetzelfde als de datum omdat de lijsten even lang zijn #
+[ 53] ✗ # This prints two equations that look the same(i.e., have the same numbers) but evaluate to different values (due to parenthesization) using variables.
+[  3] ✗ # 2 prime numbers (simple version of Goldbach's Conjecture). Moreover, it produces the second set amicable numbers.
+[ 15] ✗ for prime_candidate in range(5,10000): # Bunch of prime candidates which surely contains 1000 of them.
+[ 20] ✗         divisor_candidate = primes_list[divisor_index] # Lets the divisor-candidates run through all primes already found.
+[ 22] ✗         if prime_candidate % divisor_candidate == 0: # Tests whether the particular divisor_candidate divides the prime_candidate.
+[ 25] ✗         if divisor_index == len(primes_list) - 1 and divisors == 0: # No divisors of prime_candidate implies being prime.
+[ 32] ✗     for first_prime in primes_list: # Loops over all primes as candidates of the first part of the sum.
+[ 33] ✗         for second_prime in primes_list:    # Loops over all primes as candidates of the second part of the sum,
+[ 34] ✗                                             # for the particular first prime from the previous for-loop.
+[ 35] ✗             if first_prime + second_prime == test_number: # Tests whether the sum of the two chosen candidates is test_number.
+[ 36] ✗                 found_numbers.append(test_number) # Adds all successful test_numbers (those for which a sum exists of 2 prime numbers) to a list.
+[ 37] ✗                 print (test_number), ' = ', (first_prime), ' + ', (second_prime) # Prints these three numbers if so.
+[ 44] ✗ while n < 499: # This gives us a list with the differences between two consecutive numbers which have a sum with two primes.
+[ 54] ✗ # We used max_difference (from max(difference_list) and min_difference (from min(difference_list) instead of just typing 2 to prove 2 is, indeed, the maximum and minimum difference.
+[ 62] ✗ while test_number > 284: # Starting a while loop gives us the possibility to use test_number += 1 (and keep counting).
+[ 72] ✗     for divisor_candidate2 in range (1, sum(divisors)): # sum(divisors) is the amicable-number-candidate with
+[ 73] ✗                                                         # respect to test_number, 284 when dealing with 220.
+[ 74] ✗                                                         # Now we search for divisors of this candidate,
+[ 75] ✗                                                         # and add them to a second list, divisors2.
+[ 79] ✗     if sum(divisors2) == test_number and test_number != sum(divisors): # If the sum of the divisors of the amicable-number-candidate
+[ 80] ✗                                                                         # is equal to test_number, we have found amicable numbers.
+[ 81] ✗                                                                         # The fact that the sum of the divisors of test_number has
+[ 82] ✗                                                                         # to be equal to the amicable-number-candidate is already true,
+[ 83] ✗                                                                         # because the amicable-number-candidate we chose was in fact,
+[ 84] ✗                                                                         # the sum of the divisors of test_number. Two amicable numbers
+[ 85] ✗                                                                         # are equal when the sum of the divisors of test_number is test_number itself.
+[ 86] ✗                                                                         # This, however, leads to two equal amicable numbers, which we aren't looking for.
+[ 87] ✗                                                                         # To avoid these 'perfect numbers' (496), we add the 'and sum(divisors) != test_number'.
+[ 88] ✗         print 'The second set of amicable numbers is', test_number, sum(divisors)# Prints the result.
+[ 90] ✗     if sum(divisors2) != test_number or test_number == sum(divisors): # If the sum of the divisors of the amicable-number-candidate is
+[ 91] ✗                                                                         # not equal to test_number, we have to continue searching,
+[ 92] ✗                                                                         # so we add 1 to test_number and restart the loop.
+[ 93] ✗                                                                         # The divisor lists then have to be emptied, using 'del'.
+[ 94] ✗                                                                         # To avoid an endless loop because of perfect numbers,
+[ 95] ✗                                                                         # we add 'or test_number == sum(divisors)'.
+[100] ✗ # I know so much text in the #-comments isn't appreciated, but because we were asked to describe our strategy and motivate our actions in the exercise I added it.
+[  4] ✗ # This programme produces the 1000th prime number, and a list including the preceding 999. Moreover, it produces the longest string
+[ 12] ✗ for prime_candidate in range(5,10000): # Bunch of prime candidates which surely contains 1000 of them.
+[ 17] ✗         divisor_candidate = primes_list[divisor_index] # Lets the divisor-candidates run through all primes already found.
+[ 19] ✗         if prime_candidate % divisor_candidate == 0: # Tests whether the particular divisor_candidate divides the prime_candidate.
+[ 22] ✗         if divisor_index == len(primes_list) - 1 and divisors == 0: # No divisors of prime_candidate implies being prime.
+[ 36] ✗ for prime_candidate in range(5,10000): # Bunch of prime candidates which surely contains 1000 of them.
+[ 41] ✗         divisor_candidate = primes_list[divisor_index] # Lets the divisor-candidates run through all primes already found.
+[ 43] ✗         if prime_candidate % divisor_candidate == 0: # Tests whether the particular divisor_candidate divides the prime_candidate.
+[ 46] ✗         if divisor_index == len(primes_list) - 1 and divisors == 0: # No divisors of prime_candidate implies being prime.
+[ 48] ✗ # We remove the condition to stop at 1000 prime numbers, to make sure we have all prime numbers < 10000.
+[ 30] ✗         difference_list.append(((ylist[xlist.index(game)] - c) / (errorlist[xlist.index(game)])) ** 2) # Given equation for chi^2
+[ 33] ✗             difference_list = [] # Empties the list to use it again in the for-loop for different c.
+[ 35] ✗ best_c = c_list[chi_list.index(min(chi_list))] # Produces the c belonging to chi_min, because indices are the same (every c produced one chi^2-value).
+[ 51] ✗ new_chi_rounded = math.ceil(new_chi*10000)/10000 # With too many decimals the search in the list will fail.
+[ 30] ✗         if f_i < 0 and y_i < 0 and y_i > f_i: # Does belong to integral, but negative, so compensates a positive integral point.
+[  4] ✗ # This programme produces a horizontal bar chart, determines whether two balls collide, and monitors ball movement.
+[ 13] ✗     decimal_list = []   # Elements of list with 'decimal' as last digit are appended to this list (see line 12).
+[ 15] ✗         for list_element in list: # For a certain digit, every list_element is observed as candidate.
+[ 19] ✗             if list_element == list[len(list) - 1]: # If every element has been observed we add key and value
+[ 78] ✗         if ball[2] > (10 - ball[0]): # Then the ball has bounced off the wall and the sign of v_x changes.
+[127] ✗         ball = ball_step_2(ball) # Like a recursion; use the value you got again as argument for next step.
+[173] ✗         ball = ball_step_2(ball) # Like a recursion; use the value you got again as argument for next step.
+[292] ✗         avg_dist_ball_m_otherballs = sum(distance_list) / (len(distance_list) - 1) # -1 because the distance betw. ball i and itself is 0.0 and does not belong to average.
+[ 11] ✗     for m in range(1, n): #nu ga ik een getal n nemen en die deel ik door m, m gaat alle getallen van 1 tot n af.
+[ 13] ✗         if a == 0: #nu stel ik a gelijk aan 0, als deze 0 is, dan wordt de waarde van m (als a == 0) toegevoegt aan som1.
+[ 17] ✗         b = som1%k #we nemen nu variabele b, die is gelijk aan de modulus van som1 en k, waarbij k een getal is. Als de modulus 0 is, dan wordt het getal van k toegevoegt aan de lijst som2.
+[ 20] ✗     if som2 == n and som1 != som2: #als som2 gelijk is aan n, dan spreken we van bevriende getallen. Verder moet er nog gelden dan som1 niet gelijk is aan som2, dan zou je namelijk krijgen dan getallen bevriende getallen zijn met zichzelf.
+[ 21] ✗         print "Deze getallen zijn bevriend:", som1 , n #nu worden de bevriende getallen uitgeprint.
+[  9] ✗ def prime(getal): #ik ben een definitie van een nieuwe lijst aan het opstellen, deze lijst gaat over het berekenen van priemgetallen.
+[ 14] ✗         for i in range (3, int(getal**0.5)+1, 2): #alle getallen worden nu gedeeld door 3 tot de wortel van dat getal (dit de hoogste deler), de stapjes zijn telkens per 2, want even getallen doen niet mee.
+[ 16] ✗             if modulus == 0: #als de modulus van getal delen door  'i' 0 is, is het dus deelbaar door getal 'i', dus is het geen priemgetal, dus "False".
+[ 21] ✗ #getal = input("geef mogelijk priemgetal:  ") # voor als je zelf een getal wilt toevoegen en wilt kijken of dit een priemgetal is.
+[ 23] ✗ l1 = [2] #de lijst bestaat uit getal 2, en voegt telkens een priemgetal toe. (getal 2 is het enige even priemgetal, dus die kunnen we er apart bijzetten.)
+[ 29] ✗         l1.append(getal) #iedere keer als er een priemgetal is gevonden, wordt deze toegevoegt aan lijst 1 (l1).
+[ 40] ✗ for i in range(4, 1001, 2): #dit is de range van 4 tot 1000, we nemen hier een getal en we kijken of deze op te bouwen is uit twee priemgetallen.
+[ 41] ✗     #print "ik ben nu getal ", i, "aan het checken" ## dit was voor mezelf om te checken of ik het goed deed of niet.
+[ 43] ✗         if (i-l1[j]) in l1: #we trekken nu van de lijst van even getallen een priemgetal af, totdat totdat het resultaat ook een priemgetal is"
+[ 44] ✗             print i, "=", l1[j] ,"+" ,i-l1[j] #nu laat ik zien hoe het getal is opgebouwd uit de twee priemgetallen.
+[  6] ✗ def prime(getal): #ik ben een definitie van een nieuwe lijst aan het opstellen, deze lijst gaat over het berekenen van priemgetallen.
+[ 11] ✗         for i in range (3, int(getal**0.5)+1, 2): #alle getallen worden nu gedeeld door 3 tot de wortel van dat getal (dit de hoogste deler), de stapjes zijn telkens per 2, want even getallen doen niet mee.
+[ 13] ✗             if modulus == 0: #als de modulus van getal delen door  'i' 0 is, is het dus deelbaar door getal 'i', dus is het geen priemgetal, dus "False".
+[ 18] ✗ #getal = input("geef mogelijk priemgetal:  ") # voor als je zelf een getal wilt toevoegen en wilt kijken of dit een priemgetal is.
+[ 20] ✗ l1 = [2] #de lijst bestaat uit getal 2, en voegt telkens een priemgetal toe. (getal 2 is het enige even priemgetal, dus die kunnen we er apart bijzetten.)
+[ 26] ✗         l1.append(getal) #iedere keer als er een priemgetal is gevonden, wordt deze toegevoegt aan lijst 1 (l1).
+[ 27] ✗ print "dit is een lijst van de priemgetallen tussen de 0 en de 10000:", l1 #print de priemgetallen uit van 1-10000
+[ 36] ✗ verschil = 0 #we nemen een beginverschil van 0, dan is het nieuwe verschil namelijk altijd groter dan 0.
+[ 38] ✗ for getal in range(0,len(l1)-1): #we gaan nu de priemgetallen laten lopen door een lijst van 0, tot de lengte van lijst1 -1.
+[ 39] ✗     nieuwverschil = l1[getal+1]-l1[getal] #het nieuwe verschil definieren we als een variabele die gelijk staat aan het tweede priemgetal - het eerste priemgetal, hiermee kan je dus het gat tussen deze twee priemgetallen bepalen.
+[ 40] ✗     if nieuwverschil > verschil: #nu zeg ik, als het nieuwe verschil groter is dan het oude verschil, dan is het nieuwe verschil het oude verschil. dus hiermee bepaal je het grootste verschil tussen de priemgetallen.
+[ 43] ✗         kleinsteverschil = l1[getal] #dit is het priem getal -1, waar het verschil het grootst was.
+[ 45] ✗ print "het grootste verschil tussen twee priemgetallen is", verschil, "." #grootste verschil tussen 2 priemgetallen
+[ 27] ✗ #dit was een reeks van alle mogelijkheden op gelijkspel na. verdere uitleg lijkt mij niet noodzakelijk.
+[ 36] ✗ print "player 2:",  b #player 1 (a) is rock, player 2 (b) is paper, nu voert hij dus de functie uit.
+[ 62] ✗ # hier heb ik rock, paper en scissors gedefineerd als variabelen. Als er een combinatie van die variabelen in de functie worden gestopt komt,
+[ 78] ✗     elif x%y == 0: #als x%y nul is, betekent het dus dat het deelbaar is door elkaar, dan geeft hij "true" aan.
+[ 80] ✗     else: # alle andere mogelijkheden moeten dus "false" zijn, dus dan zijn ze niet deelbaar door elkaar.
+[125] ✗     l3 = [] #we nemen een lege lijst, alle getallen die in beide lijsten voorkomen, voegen we hier aan toe.
+[128] ✗             if i == k: # als getal i en k gelijk zijn aan elkaar, dan zijn het dus gemeenschappelijke getallen.
+[160] ✗     return math.ceil(c/a) + d*math.log(b, 7) #het enige wat hier gedaan wordt wat belangrijk is, is dat als er een getal wordt gedeeld, dat er nu de bovengrens van wordt genomen.
+[179] ✗ def rand_divis_3(x): #deze functie gaat random getallen tussen de 0 en de 1000 "cre�eren". Als deze te delen is door 3, dan is het  "true".
+[194] ✗     for i in range (0, b): # het programma gaat nu een loopje af, wat afhangt van hoeveel keer er gegooit mag worden.
+[195] ✗         c = random.randint(1,a) #c is de dobbelsteen, de dobbelsteen in het voorbeeld het 6 vlakken.
+[207] ✗     total = 0 # we gaan nu een lijst maken die telkens het vorige element erbij opteld. Ons totaal begint dus op 0.
+[  5] ✗ #bij deze opdracht gaan de bestpassende waarde vinden van een tal van waardes voor een voetballer die goede pases geeft.
+[  6] ✗ #dit doen we door de chi uit te rekenen, dit is het kwadraat van (ywaarde- "c"/ delen door de foutmarge)
+[ 22] ✗ c = 39 #we stellen eerst een beginwaarde van c op, dit is de laagst mogelijke getal, dus de laagste y waarde.
+[ 28] ✗         chi = ((float(y[i])-float(c))/float(foutmarge[i]))**2 #nu gaan we voor de 10 waardes telkens een chi uitreken met een waarde van c
+[ 30] ✗         chi2 = chi + chi2 #de waarde van chi2, wordt bepaald door de sommatie van alle 10 de getallen, dus alles uit de for loop.
+[ 31] ✗     if chi3 > chi2: #als de waarde van chi3 groter is dan de waarde van chi2, dan wordt chi2, chi3.
+[ 32] ✗         #hij kijkt dus in de for loop telkens wat de waarde van chi is, en als er een lagere waarde gevonden wordt, dan onthoudt hij deze.
+[ 35] ✗     c = c + 0.01 #de waarde van c kunnen we zo exact bepalen als we maar willen, ik doe het op 1/100e, wat ik persoonlijk goed genoeg vindt.
+[  6] ✗ #het idee van deze opdracht is, dat we een functie hebben en hier de integraal van willen berekenen.
+[  9] ✗ #door uiteindelijk een percentage te bepalen, en deze keer het oppervlakte te doen, krijg je de integraal.
+[ 19] ✗     x = random() #we nemen nu dus een random x getal. Deze functie geeft random getallen van 0 tot 1.
+[ 21] ✗     if y < x**x: #Hier draait het om, als het random x getal, die we in de functie stoppen, en deze is groter dan de y waarden.
+[ 23] ✗         Ngoed = Ngoed + 1 #nu voegen we iedere goede waarde toe aan de Ngoed lijst, die dus het aantal goede waarden bijhoudt.
+[ 25] ✗     percentage = float(Ngoed)/(float(a)) #het percentage is dus het aantal goede getallen delen door het totaal aantal getallen.
+[ 49] ✗ #deze functie is iets anders, we kijken nu namelijk eerst naar alles boven de 0 en daarna alles onder de nul, anders krijg je niet de goede integraal.
+[ 78] ✗ integraaltotaal = integraal1 - integraal2 #het totale integraal is dus boven alles boven de x-as - alles onder de x-as.
+[ 13] ✗     a = 100000 #we definieren een variabele 'a', deze geeft de de exactheid van het integraal aan. Dit is namelijk de delta x,
+[ 19] ✗     stepsize = float(xmax-xmin)/a #we gaan nu een delta x kiezen, we nemen nu de lengte van de x en
+[ 25] ✗         x = xmin+i*stepsize #we gaan nu x door een for loopje gooien, waardoor het voor iedere delta x een waarde vindt.
+[ 26] ✗         x_values.append(x) #alle delta x'en worden nu aan de x-lijst toegevoegd, hierin zitten dus 100000, waardes van x.
+[ 27] ✗         a = x**x #we gaan nu voor iedere delta x, de functie uitvoeren (x^x), dit geeft de y-waarden.
+[ 33] ✗     integraal = 0 #we gaan nu het integraal berekenen, we stellen dus een 0 oppervlakte op, en iedere y waarde wordt met de stapgrote vermenigvuldigd.
+[ 34] ✗     for k in range(1,len(y)-1): #dit doen we weer met een loopje, die dus alle y-waarden met de stapgrote berekend.
+[ 36] ✗         integraal = (stepsize*y[k] + integraal)  #het nieuwe integraal is dus telkens het oppervlakte van de 1e + 2e + .... n-e.
+[ 37] ✗     print "De integraal is: ", integraal + stepsize*(y[0]+y[-1])/2 # de eerste en laatste waarde zijn iets anders dan de rest, dus die doen we apart, anders krijg je een heel klein verschil in uitkomst.
+[115] ✗         a = sqrt(1+ (cos(x))**2) #zelfde methode als de riemmanssommen, alleen nu de functie voor de booglengte, waar f', de 'cos' is.
+[ 34] ✗         print line[2],":", line[3] #aangezien het een tupple is, kunnen we de 3e en 4e lijn eruit printen, die zijn namelijk van belang.
+[ 37] ✗ print print_population_list("n:\population.csv") #hij print nu de 3e en 4e kolom (die horizontale), uit)
+[ 58] ✗     growth_rate_dict = dict(zip(lijstjaartallen, lijstgrowthrates)) #er wordt nu een zip bestandje gemaakt van alle jaartallen en daarnaast alle groeiratios.
+[ 19] ✗ vakken = raw_input("geef een lijst van vakken op: " ) #er moet een lijst van vakken opgegeven worden, gescheiden door komma's
+[ 20] ✗ vakken = vakken.split(',') #deze lijst wordt nu gesplits, van de komma's waardoor er een lijst overblijft
+[ 29] ✗         print i, j #nu printen we alle elementen uit de tupple, er verschijnt dus een rij van vakken met daarnaast de cijfers voor het behaalde vak
+[ 31] ✗ print "Gemiddelde van al je vakken: ", float(a)/float(b) #het gemiddelde berekenen we door er floats van te maken en dan de sommatie door de lengte te delen.
+[ 36] ✗     for x, y, r in bal1, bal2: #we nemen de variabelen x y en r voor een bol/cirkel, met r als straal
+[ 37] ✗          ''' De bollen botsen als het verschil in afstand gelijk of kleiner is dan de som van de radiusen. Dus het is de stelling van pythagoras, Deltaxkwadraat- deltaykwadraat is Ckwadraat
+[ 44] ✗         if  ckwadraat <= totale_radius: #als ckwadraat kleiner of gelijk is aan de radiusen, dan botsen ze; dus True
+[ 60] ✗ if A == 'januari' or A == 'februari': #dit is voor de functie nodig, aangezien vroeger een andere telling van de maanden was
+[ 73] ✗     nummerdag = Z%7 #het aantal dagen totaal, daar de modulus van (van 7) en je houdt het resterende aantal dagen voer, vervolgens deze in de dictionary laten 'zoeken'.
+[ 74] ✗         #de functie zelf heb ik niet bedacht, ik kan 'm ook maar nauwelijks begrijpen wat het precies is.
+[ 15] ✗     Deze functie hierboven geeft aan dat als je een getal moet invullen en je vult een string in dat er dan geen foutmelding komt.
+[ 16] ✗     Hij checkt eerst of de input een integer is, zoniet dan print hij "foutmelding" en herhaalt hij de vraag naar een getal '''
+[ 37] ✗         a = ask("geef getal tussen 1 en %d, speler1: "%maxstenen) #speler 1 moet nu een getal opgeven tussen de 1 en de %d, dat is in dit geval 10.
+[ 40] ✗             print"Geen correct getal, geef nieuw getal tussen 1 en de %d: "%maxstenen #als het geen goed getal is, dan vraagt het om een nieuwe.
+[ 41] ✗             a = ask("geef getal tussen 1 en %d, speler 1: "%maxstenen) #hier zit een functie in een functie, 'ask' vraagt al om een input en als dat een sting
+[ 43] ✗         stapel = stapel - a #de nieuwe stapel is natuurlijk de hele stapel - het aantal dat speler 1 kiest.
+[ 63] ✗ play_nims(100,10)  #er wordt nu gespeeld met een stapelgrootte van 100 en een max aantal stenen weghalen van 10.
+[ 10] ✗ een bepaalde snelheid in de x en de y richting. Bij de eerste opgave ga ik de hoeveelheid balletjes beschrijven aan
+[ 11] ✗ de rechterkant van de doos (dus in mijn geval als x>=0.5). Bij de tweede opgave ga ik de gemiddelde afstand berekenen.
+[ 25] ✗ lijsttijd = [] #een lijst die alle tijdseenheden bijhoudt, (DT telt het erbij op) dit gebruik ik later voor de grafieken
+[ 26] ✗ balletjes = input("geef het aantal balletjes voor in de doos: ") #het aantal balletjes die men in de doos wilt hebben
+[ 27] ✗ totaletijd = input("geef de tijd die de balletjes in de doos moeten bewegen: ") #de tijdsinterval dat de balletjes gaan bewegen in de doos
+[ 28] ✗ for i in range(0,balletjes): #we gaan nu vier lijsten cree�ren van de balletjes, de x en y coordinaten en de snelheid in de x en y richting.
+[ 29] ✗     '''Deze for-loop gaat dus voor ieder individueel balletje een bepaalde x en bepaalde y snelheidsvector maken, ook geeft het een totaalsnelheid dus snelheidxy
+[ 31] ✗     hoek = uniform(0.0,2*pi) #dit geeft de hoek aan, dus 360 graden ofwel 2pi. Deze hoek ga ik gebruiken om de snelheid een x en y vector te geven.
+[ 37] ✗     snelheidxlijst.append(snelheidx) #zoals ik al had verteld, wil ik deze snelheidsvector opslaan voor ieder deeltje, vandaar dat ik 'm toevoeg aan snelheidxlijst.
+[ 42] ✗     xlijst.append(x) #het beginpunt is niet 0, vandaar dat ik dat voor ieder deeltje ook moet toevoegen aan een lijst, in dit geval dus 0.25.
+[ 43] ✗     ylijst.append(y) #het beginpunt is niet 0, vandaar dat ik dat voor ieder deeltje ook moet toevoegen aan een lijst, in dit geval dus 0.75.
+[ 46] ✗ xsimmulatie = [] #hier maak ik een lege lijst, hier ga ik een simulatie mee maken (dit hoort niet bij de opdracht, maar doe ik voor mezelf), ik ga aan deze lijst telkens de xwaarden
+[ 47] ✗                  # van 1 balletje aan toevoegen, doe hier een figuur van te maken, kan ik zien of het programma naar behoren werkt, ook kan ik enige fouten ermee opsporen.
+[ 49] ✗ x_vijf = [] #een lege lijst die ik bij opdracht 1a gebruik, hier voeg ik alle balletjes aan toe als ze voorbij x>0.5 zijn, uitleg volgt nader.
+[ 56] ✗     '''Nu ga ik een while loop doorlopen, als de opgegeven tijd nog niet bereikt is door de 'huidige tijd', dan blijft hij die loop doorlopen
+[ 57] ✗     De tijd wordt gegeven door een 0 tijd, + een delta tijd, de delta tijd DT is bij mij 1. Nu beschrijf ik tijd dus eigenlijk als kleine stapjes
+[ 63] ✗         ''''ik ga nu de balletjes in een for loopje laten lopen, ieder balletje gaat in dit loopje 'bewegen', ik laat
+[ 64] ✗         ze bewegen door de x coordinaat aan te passen door de snelheid * DT te doen + begin x waarden. Dit doe ik eveneens voor y
+[ 65] ✗         hierdoor bewegen ze dus telkens in een richting, later in deze loop ga ik eisen stellen, dat ze moeten botsen en etc.'''
+[ 67] ✗         xlijst[i] = xlijst[i] + snelheidxlijst[i]*DT #de nieuwe x coordinaat is dus de oude + snelheid*DT, die voeg ik toe aan de xlijst
+[ 71] ✗         '''Nu ga ik de balletjes laten botsen, dit doe ik door de snelheden als ze botsen om te klappen, botsen ze tegen de x wand (verticaal), dan verandert de snelheid niet,
+[ 72] ✗         maar alleen de snelheid in de x richting klapt om, de positie is natuurlijk ook anders geworden.'''
+[ 73] ✗         if xlijst[i] >= xwaardebox: #als het balletje dus de grens x = 1`passeert, dan moet de snelheid dus omgeklapt worden
+[ 75] ✗             xlijst[i] = xwaardebox - (xlijst[i]-xwaardebox) #de x waarde verandert nu dus ook in 1 - (de oude waarden - 1), op papier is dit makkelijk uit te leggen, hier is het een aanname.
+[ 76] ✗         elif xlijst[i] <= 0: #ditzelfde geldt als het balletje de 0-wand bereikt, dan verandert de snelheid om en de positie is nu ook omgeklapt.
+[ 86] ✗         if xlijst[i] >= 0.5: #opdracht 1a, als het balletje voorbij x >= 0.5 komt, dan ga ik dat bijhouden. dus als het voorbij x >=0.5 dan tel ik bij deeltjesrechts 1 erbij op.
+[ 88] ✗         totaledeeltjes += 1.0 #het totale aantal deeltjes tel ik altijd er 1 bij op, zo kan ik dus een percentage krijgen van het aantal deeltjes wat rechts zit en links zit.
+[ 89] ✗                               #dit zou na verloop van tijd rond de 0.5 (50%) moeten zitten, want alle deeltjes bewegen homogeen in de box.
+[ 91] ✗     lijsttijd.append(tijd) #hier maak ik een lijst van de tijd, door telkens de tijd er aan toe te voegen.
+[ 92] ✗     tijd = tijd + DT #hier laat ik de tijd lopen, dus de nieuwe tijd is de oude + DT (in mijn geval 1)
+[ 93] ✗     percentage = (deeltjesrechts/totaledeeltjes) #het percentage van de deeltjes wat rechts van de box zit is nu uit te rekenen aangezien we het totaal en het aantal rechts weten.
+[ 94] ✗     x_vijf.append(percentage) #we voegen nu voor ieder moment het percentage toe, want we zitten nog steeds in de while loop, die nog loopt.
+[ 95] ✗     xsimmulatie.append(xlijst[0]) #dit geeft een simmulatie van deeltjes 1 aan, dit was voor een test, dit moet overigens wel in de while loop staan, anders krijg je maar 1 waarden van de coordinaat.
+[106] ✗ '''Dit is opdracht 1b, ik moet de gemiddelde lengte tussen twee balletjes bepalen, Dit doe ik door telkens ieder element met het vorige element te vergelijken.
+[107] ✗ Door de stelling van pythagoras te gebruiken kan ik hun onderline afstand berekenen. Van alle deeltjes dit doen en het gemiddelde bepalen en dan krijg je de gemiddelde onderlinge afstand.
+[108] ✗ Bij de grafiek maken, kwam ik telkens op de fout met dezelfde dimensie, ik wist niet hoe ik dit moest verhelpen dus ik heb nu het aantal balletjes gelijk gezet aan het aantal tijdseenheden.
+[109] ✗ Hier heb ik een grafiek van gemaakt, die dus wel een goed beeld geeft over het verloop van de gemiddelden. Ik wil nog wel graag weten hoe ik het anders had kunnen doen, door dus een grafiek te kunnen
+[119] ✗ for i in range(0,100): #het aantal balletjes heb ik dus nu ingevoerd op 100, anders kwam ik niet uit de grafiek.
+[142] ✗ while tijd < 100: #het aantal balletjes en de tijd zijn nu allebei gelijk aan 100, voor de grafiek.
+[166] ✗     for z in range(0,100): #alles hierboven is al uitgelegd, maar nu ga ik de onderlinge afstand berekenen.
+[167] ✗         ''' Stel ik neem een deeltjes die een bepaalde positie heeft, en ik wil de afstand van een ander deeltje bepalen. Dan ga ik dus een lijst af voor de deeltjes en ga ik bij het vorige deeltje kijken wat daar de
+[168] ✗         postie van is. Dit heb ik dus gedaan door eerst een for loop te nemen van 0 tot 100 en dan een for loop van z + 1 tot 100. Zo ga ik ieder element af en hier de gemiddelde afstand van berekenen.
+[169] ✗         vervolgens weet ik beide posities en kan ik met de stelling van pythagoras de afstand berekenen. Vervolgens voeg ik deze afstanden toe aan een lijst en zet ik deze op volgorde van klein naar groot en in
+[170] ✗         omgekeerde volgorde (voor de grafiek). Het gemiddelde heb ik berekend door de totale grote van de gemiddelde afstand te delen door het aantal balletjes. '''
+[182] ✗ plt.plot(lijsttijd, lijstafstand, 'bo') #deze grafiek toont per tijdseenheid de gemiddelde afstand van de balletjes.
+[191] ✗ '''De halfwaardetijd hangt af van de hoeveelheid balletjes en tijdstappen, deze heb ik berekend, en vervolgens heb ik de de snelheid verdubbeld. Toen
+[197] ✗ balletjes = input("geef het aantal balletjes voor in de doos: ") #het aantal balletjes die men in de doos wilt hebben
+[198] ✗ totaletijd = input("geef de tijd die de balletjes in de doos moeten bewegen: ") #de tijdsinterval dat de balletjes gaan bewegen in de doos
+[228] ✗     '''Nu ga ik een while loop doorlopen, als de opgegeven tijd nog niet bereikt is door de 'huidige tijd', dan blijft hij die loop doorlopen
+[229] ✗     De tijd wordt gegeven door een 0 tijd, + een delta tijd, de delta tijd DT is bij mij 1. Nu beschrijf ik tijd dus eigenlijk als kleine stapjes
+[235] ✗         ''''ik ga nu de balletjes in een for loopje laten lopen, ieder balletje gaat in dit loopje 'bewegen', ik laat
+[236] ✗         ze bewegen door de x coordinaat aan te passen door de snelheid * DT te doen + begin x waarden. Dit doe ik eveneens voor y
+[237] ✗         hierdoor bewegen ze dus telkens in een richting, later in deze loop ga ik eisen stellen, dat ze moeten botsen en etc.'''
+[239] ✗         xlijst[i] = xlijst[i] + snelheidxlijst[i]*DT #de nieuwe x coordinaat is dus de oude + snelheid*DT, die voeg ik toe aan de xlijst
+[242] ✗         if xlijst[i] >= 0.8 and xlijst[i] <= 0.9 and ylijst[i] <= 0.00: # hier wordt het gat gedefineerd, het gat zit dus rechtsonderaan de doos.
+[243] ✗             print "balleje", i, "zit nu in het gat!" #als balletje 'i' in het gat zit, wordt dit vermeldt, aan het einde is het leuk om te zien dat het echt veel tijd kost
+[244] ✗                                                      #voordat er weer een balletje in het gat verdwijnt, in het begin dus niet heel interessant.
+[245] ✗             deeltjesbox.append(i) #de deeltjes die in het gat terecht zijn gekomen voeg ik toe aan een lijst.
+[246] ✗             xlijst[i] = 10 #ik plaats het balletje buiten de doos met snelheid 0, dit omdat verwijderen uit de lijst teveel problemen met zich mee bracht!
+[251] ✗             balletjes -= 1 #het totaal aantal balletjes haal ik er 1 vanaf, met ieder balletje die in het gat zit. Hier kan ik later een grafiekje van maken.
+[252] ✗         '''Nu ga ik de balletjes laten botsen, dit doe ik door de snelheden als ze botsen om te klappen, botsen ze tegen de x wand (verticaal), dan verandert de snelheid niet,
+[253] ✗         maar alleen de snelheid in de x richting klapt om, de positie is natuurlijk ook anders geworden.'''
+[254] ✗         if xlijst[i] >= xwaardebox: #als het balletje dus de grens x = 1`passeert, dan moet de snelheid dus omgeklapt worden
+[256] ✗             xlijst[i] = xwaardebox - (xlijst[i]-xwaardebox) #de x waarde verandert nu dus ook in 1 - (de oude waarden - 1), op papier is dit makkelijk uit te leggen, hier is het een aanname.
+[257] ✗         elif xlijst[i] <= 0: #ditzelfde geldt als het balletje de 0-wand bereikt, dan verandert de snelheid om en de positie is nu ook omgeklapt.
+[269] ✗     lijsttijd.append(tijd) #hier maak ik een lijst van de tijd, door telkens de tijd er aan toe te voegen.
+[270] ✗     tijd = tijd + DT #hier laat ik de tijd lopen, dus de nieuwe tijd is de oude + DT (in mijn geval 1)
+[ 33] ✗     '''Deze functie gaat het tekstdocument lezen, het splitst hierbij de data en de temperatuur in een lijst.
+[ 34] ✗        Deze lijsten heten respectievelijk 'data' en 'temps', verder veranderd deze functie de temperatuur ook
+[ 35] ✗        in normale getallen en niet 10 keer zo groot. Het bepaald ook welke regels er gelezen moeten worden, het
+[ 36] ✗        bestand begint bij regel 21 en het eindigt bij 2012, ik laat 'm alleen iets minder lezen ivm cappaciteit computer
+[117] ✗     '''Deze functie houdt het aantal dagen bij dat het vriest, door telkens bij te houden wanneer het onder 0 is, en hier een teller voor bij te houden
+[118] ✗         krijge ik uiteindelijk een lijst die aangeeft welke periode van vriesdagen het langst is. Door deze periode om te rekenen naar het moment en door
+[119] ✗         het maximumaantal vriesdagen te weten, kan ik achterhalen wanneer deze periode plaatsvond.'''
+[148] ✗     ''' Bij deze functie moest er een jaar en een maand ingevoerd worden en dan moet deze functie de gemiddelde temperatuur berekenen over die maand.
+[149] ✗         Door eerst de maand om te schrijven naar een getal/datum en deze bij het jaar op te tellen, krijg ik een datum als 19010100. Vervolgens vergelijk ik
+[150] ✗         de eerst 6 tekens met elkaar en als deze overeenkomen dan telt de functie de temperatuur van datzelfde element erbij op (voegt toe aan een lijst).
+[189] ✗ '''hier liep ik vast, Ik zat met de verjaardag heel erg te pielen hoe ik nou precies de temperatuur op mijn verjaardag moest berekenen.
+[190] ✗ #het lukte mij alleen om dit van �f een hele maand te doen of vanaf het begin, maar niet een exacte datum.'''
+[206] ✗ plt.hist(gemiddelde_temp_verjaardag , bins=20 ) #tevens wel een mooie histogram, aangezien me dat wel lukte
+[207] ✗ ##plt.plot(xwaardenverjaardag ,gemiddelde_temp_verjaardag,'r-') #een grafiek van de gemiddelde temperatuur op m'n verjaardag.
+[219] ✗ '''Dit was het exacte deel waar ik vastliep, ik wilde de temperatuur op 11 september berekenen, maar dat lukte gewoonweg niet.'''
+[242] ✗ '''Het is me niet gelukt om deze opdracht helemaal correct te kunnen maken, ik stuitte op hetzelfde probleem
+[243] ✗     als bij de vorige opdracht, het lukte me niet om de jaren te splitsen en de temperatuur op een dag te berekenen. Zo heb ik hier een functie geschreven
+[244] ✗     die de extremen berekent, maar ik kan enkel in deze functie een lijst van temperaturen invoeren. En dan berekend
+[245] ✗     deze het aantal extreme dagen. Ik heb tal van oplossingen geprobeerd, maar het is niet gelukt om het per jaar
+[246] ✗     te berekenen. Hetzelfde probleem ondervond ik bij de vorige opdracht ook bij de temperatuur op m'n verjaardag te krijgen.
+[  9] ✗ prime_list = [2]                        # Een lijst om priemgetallen aan toe te voegen. Het getal 2 heb ik er al aan toegevoegd, want dat is een priemgetal, wat het systeem niet zal ontdekken.
+[ 14] ✗ while len(prime_list) < 1230:           # Voor opdracht 2 koos ik ervoor om de lijst van opdracht 1 te vullen met priemgetallen kleiner dan 10000, want dat is nodig voor opdracht 2.
+[ 48] ✗ while x > 220:                          # x moet in ieder geval 221 zijn, omdat 220 al het eerste bevriende getal is, en ik het tweede wil vinden.
+[  9] ✗ prime_list = [2]                    # Een lijst om priemgetallen aan toe te voegen. 2 heb ik er al aan toegevoegd, want dat is een priemgetal, wat het systeem niet zal ontdekken.
+[ 17] ✗ while len(prime_list) < 1230:       # Voor de tweede opdracht koos ik om de lijst te vullen met priemgetallen kleiner dan 10000, want tot 10000 is nodig voor de tweede opdracht.
+[ 37] ✗ print 'Opdracht 2'                  # Berekenen wat de langste reeks aaneengesloten niet-priemgetallen is (n < 10000)
+[ 39] ✗ noprime_list = []                   # Een lijst om elkaar opeenvolgende niet-priemgetallen aan toe te voegen
+[ 47] ✗         d = c                       # Op deze manier onthoudt hij het tot dan toe grootste verschil d tussen priemgetallen, dus de langste reeks aaneengesloten niet-priemgetallen
+[ 48] ✗         x = m                       # Zo onthoudt hij ook bij welke m (het eerste priemgetal wat volgt na de reeks) het grootste verschil is
+[  5] ✗ #set variables a and b for different parts of the tic tac toe board and print the tic tac toe board
+[ 88] ✗ # niet mee doen, dus als x <= 0.1 count -= 1 om zo alsnog 100 punten te krijgen binnen het interval
+[234] ✗ # verwachtte uitkomst = de gem afstand van 0, 90 en 2x 45 graden(y en x respectievelijk naar 45)/ de gem snelheid / de kans dat botsing op het gat is
+[112] ✗ opgave4(1,2, -10, -1,-2, 10) # mijn code werkt op 3 decimalen nauwkeurig, heb geen idee hoe je het verandert in  breuken.
+[ 39] ✗     for zwartepiet in range(0,len(lijstsomdelers)): # om de som van de delers van de som te berekenen
+[ 42] ✗     if getal != som2: #als a niet gelijk is aan b reset de variabelen én getal wordt met 1 verhoogd
+[ 27] ✗     for c in np.arange(min(y3lijst),max(y3lijst)+1,0.001): # c zit tussen het minimale van de lijst en het maximale van de lijst
+[ 30] ✗     if b > a: # om de integraal altijd te laten werken ookal is a>b, in dit geval geeft de functie een negatieve integraal
+[ 23] ✗         stapjes = int((b-a)*10000) # aantal stapjes definiëren aan de hand van het verschil tussen b en a
+[ 24] ✗         xwaardes =  np.linspace(a, b , stapjes) # x-waardes laten lopen van a tot b met 'stapjes' aantal stappen
+[ 34] ✗             som = som + ywaardes[n]*dx  # alle waardes maal dx en vervolgens sommeren, behalve de eerste en de laatste
+[ 36] ✗         som = som + (ywaardes[0]+ywaardes[-1])*(dx/2)   # de laatste en de eerste waarde toevoegen maal 0.5*dx
+[ 41] ✗         stapjes = int((a-b)*10000)      # a en b omgedraaid omdat 'stapjes' positief moet zijn voor np.linspace
+[ 42] ✗         xwaardes =  np.linspace(b, a , stapjes) # a en b omgedraaid omdat het is ... = np.linspace(start, stop, step) dus start < stop
+[ 43] ✗         dx = (float(b)-float(a))/float(stapjes) # a en b niet omgedraaid omdat de waarde negatief moet worden als a > b.
+[ 47] ✗ def groei(): # ik heb geen idee hoe progns aan de waardes komt, dus heb ik de percentuele groei maar genomen
+[ 40] ✗             if x >= xmax or x <= xmin:          # Als de ballen uit de doos dreigen te gaan, draai dan de snelheid om
+[ 41] ✗                                                 # En de nieuwe x/y is gelijk aan 2 keer de grenzen min de x/y-waardes
+[ 42] ✗                 vx = -vx                        # Want x - xmax is het overschot, en dit moet weer van xmax worden afgetrokken
+[ 43] ✗                 if x >= xmax:                   # En :xmax - (x - xmax) = 2 * xmax - x (hetzelfde geldt voor y)
+[ 58] ✗         return positie                          # Zodat er een lijst uit de functie komt die op tijd gerangschikt is
+[ 60] ✗ def rechterkantbox():                           # Om een '1'- of een '0'-waarde aan de positie van de bal
+[ 61] ✗     positie = grensbal()                        # '1' als de bal aan de rechterkant van de doos zit
+[ 62] ✗     xpositie = positie[:len(grensbal())/2]      # '0' als de bal niet aan de rechterkant van de doos zit
+[139] ✗     stapjes = len(lijst)/200                # honderdbal bestaat uit 100 x-waardes en 100 y-waardes
+[147] ✗             dx = (lijst[stapjes*2*n+el]-lijst[stapjes*(2*n+2)+el])      # de el-ste x-waarde moet met de volgende el-ste x-waarde worden vergeleken
+[148] ✗             dy = (lijst[stapjes*(2*n+1)+el]-lijst[stapjes*(2*n+3)+el])  # en in de lijst staat voor dt1 x1,y1,x2,x2 ... xn,yn
+[149] ✗             dr = m.sqrt(dx**2 + dy**2)                                  # de afstand tussen 2 ballen(pyhtagoras)
+[150] ✗             gemdafstandbal.append(dr)                                   # gooi alle afstanden tussen ball_i en de andere ballen in een lijst
+[152] ✗         gemdafstand = sum(gemdafstandbal) / 99                          # sommeer de afstanden en deel de totale afstand door het aantal ballen voor de gemiddelde afstand
+[153] ✗         gemdafstandtijd.append(gemdafstand)                             # elke keer dat alle andere ballen zijn doorlopen (elke dt) wordt de gemiddelde afstand in een lijst gestopt
+[157] ✗ def gatbal(v):                                                     # precies hetzelfde als grensbal() (2e functie) alleen dan nu met meer tijd en een gat
+[179] ✗             if  xgatlinks <= x <= xgatrechts and y <= ygat:         # als de bal in het gat komt dan:
+[181] ✗                  break                                              # stopt de functie en wordt de verlopen tijd gereturned
+[  9] ✗     # De code uit opgave één is opnieuw gebruikt om een lijst van priemgetallen te maken die tot en met
+[ 16] ✗                                   # Niet begonnen bij 1, want elk getal - ook priemgetallen - zijn deelbaar door 1.
+[ 26] ✗    # Vervolgens wordt een loop gedaan over alle even getallen tot en met duizend, waarmee gekeken wordt of
+[ 29] ✗         paar_gevonden = False # Bij elke nieuwe loop wordt het antwoord op de vraag of het evengetal als som van
+[ 30] ✗                               # twee priemgetallen geschreven kan worden weer opnieuw op "False" gezet.
+[ 34] ✗                     paar_gevonden = True # als er twee priemgetallen zijn gevonden die opgeteld het even getal
+[ 35] ✗                                          # zijn, wordt het antwoord op de vraag of het evengetal als som van
+[ 36] ✗                                          # twee priemgetallen geschreven kan worden veranderd naar "True".
+[ 38] ✗     # Als er een voor één even getal geen priempaar is gevonden, staat de paar_gevonden nog op False en geeft
+[ 39] ✗     # dit programma een output dat het vermoeden van Goldbach niet klopt. Is wel voor elk even getal een
+[ 53] ✗     getalA = 220 # 220 is het eerste bevriende getal, een volgend bevriendgetal moet daar boven liggen.
+[ 55] ✗     while getalA <= 3000: # het programma gaat nu op zoek naar alle bevriende getallen onder de 3000.
+[ 57] ✗         # Elk getal "delerA" waardoor A deelbaar is (dus waarvoor geldt getalA%delerA = 0) wordt aan de
+[ 58] ✗         # nieuwe lijst van delers van A toegevoegd. Na elke loop wordt deze lijst weer leeg gemaakt.
+[ 67] ✗         # Van de lijst met delers van A wordt de som genomen. De eerste voorwaarde voor bevriende getallen
+[ 68] ✗         # is dat deze som gelijk moet zijn aan getalB. Voor dit getalB wordt gekeken wat de delers zijn.
+[ 69] ✗         # Deze delers worden vervolgens aan de lijst delers_B toegevoegd, die na elke loop weer geleegd wordt.
+[ 79] ✗         if (sum(delers_B) == getalA) and (getalA != som_delers_A): # Deze laatste beperking is opgelegd, omdat het om twee verschillende getallen moet gaan.
+[ 86] ✗     # Extra commentaar opgave 4: In dit programma zitten nog een paar punten waar ik zelf niet tevreden over ben,
+[ 87] ✗     # maar waar ik nog geen werkende oplossing voor heb kunnen vinden. Ten eerste dat ik de lengte van de
+[ 88] ✗     # while-loop redelijk willekeurig heb gekozen. Ik heb een gok genomen dat het tweede paar bevriende getallen
+[ 89] ✗     # binnen de 3000 zou liggen en toevallig was dit waar. Als ik hiermee nog niet het tweede paar had gevonden,
+[ 90] ✗     # had ik deze waarde steeds handmatig moeten verhogen. Dit zou bijvoorbeel verholpen kunnen worden de while
+[ 91] ✗     # loop tot max_getal te laten lopen, en aan het einde van de loop de max_getal met bijv. 500 te verhogen (beginwaarde
+[ 92] ✗     # voor de while loop instellen op bv 1500). Dit heeft echter wel tot gevolg dat het programma alsmaar doorgaat en dat
+[ 93] ✗     # wilde ik niet. Een tweede punt is dat de paren bevriende getallen dubbel worden geprint, bijv. zowel
+[ 17] ✗                                   # Niet begonnen bij 1, want elk getal - ook priemgetallen - zijn deelbaar door 1.
+[ 26] ✗     print "het duizendste priemgetal is:", lijst_priem[1000-1] #print alleen het duizendste priemgetal.
+[ 28] ✗     print "de lijst van eerste duizend priemgetallen is:", lijst_priem #print de hele lijst van de eerste 1000 priemgetallen.
+[ 34] ✗     # code opgave 1. Nu "while len(lijst_priem) <= 1000-1" vervangen door "while teller <= 10000", zodat
+[ 51] ✗ # Ik maak nu een lijst aan met alle verschillen tussen de opeenvolgende priemgetallen uit lijst_priem
+[ 59] ✗ # Vervolgens bepaal ik  de positie van het maximale verschil. Door middel van een loop beginnend bij de eerste
+[ 60] ✗ # verschilwaarde wordt steeds voor de opeenvolgende waarde gekeken of die hoger is. Zo ja, dan wordt de index van
+[ 61] ✗ # deze waarde onthouden. Zo nee, dan wordt de oude waarde onthouden en gaat de loop over het volgende getal.
+[ 70] ✗     max_waarde = lijst_priem[max_index] #het priemgetal waar de reeks niet-priemgetallen begint
+[ 76] ✗     print "Het begin van de reeks niet-priemgetallen is:", begin_reeks,"." # de reeks van niet-priemgetallen begint bij het getal na het priemgetal
+[ 77] ✗     eind_reeks = (lijst_priem[max_index + 1] - 1) # de reeks eindigt bij het eerstvolgende priemgetal - 1.
+[ 64] ✗ # Returns a new list where the i-th element is the sum of the first i+1 elements from the original list.
+[ 75] ✗ # sums all numbers in a list. The "parameter" number_list is a list of numbers. Deze functie stond al in de tekst gegeven.
+[ 82] ✗ # finds the position of a value in a list. Parameter x is the value that is to find and "parameter" number_list is a list of numbers.
+[ 14] ✗      for xvalue in xlist: # Voor elke x van 0 tot 2pi wordt de sin en cos berekend die worden toegevoegd aan respectievelijk ysinlist en ycoslist
+[ 45] ✗     assert_equal("multadd(math.sin(math.pi/4.0), 0.5, math.cos(math.pi/4.0))", 1.06066017178) # test of angle_test
+[ 46] ✗     assert_equal("multadd(2, math.log(12,7), math.ceil(276/19.0))", 17.5539788165) # test of ceiling_test
+[105] ✗ # Python geeft een hoop waarschuwingen als gevolg van de plot. Ik ben er niet achter waar dit aan ligt.
+[ 51] ✗ # Er worden N random punten (x_random, y_random) binnen de minimale en maximale x en y waarde genomen.
+[ 52] ✗ # Vervolgens wordt gekeken of dit punt binnen of buiten het gebied tussen  de lijn y = 0 en de functie valt.
+[ 56] ✗         alist.append(random.randint(0,500)) # Every number in the list will be an integer between 0 and 500.
+[ 86] ✗     # 'collide' will become a boolean True and if the statement is false, become the boolean False.
+[107] ✗     print "for t1 and t2 collide:", ball_collide(t1, t2) # To test whether the function takes negative radii or not.
+[108] ✗     print "for t1 and t3 collide:", ball_collide(t1, t3)  # To test whether the function also works with floats and negative x values.
+[109] ✗     print "for t4 and t5 collide:", ball_collide(t4, t5) # To test whether the function is correct if the balls just touch.
+[112] ✗ """ moves a ball over one time step. Parameter bal is a tuple of (x, y, vx, vy) representing the balls
+[  6] ✗ # Genereer eerst een lijst met alle priemgetallen tot 1000. Gebruik hiervoor de code van het bestand primes.py
+[ 24] ✗ # De som van twee priemgetallen moet een even getal zijn. Ofwel het verschil tussen het even getal en het priemgetal moet opnieuw een priem zijn.
+[ 55] ✗ # Als getal vriendje niet gelijk aan maatje, som van delers van maatje gelijk aan vriendje en vriendje kleiner dan maatje, dan worden vriendje en maatje geprint.
+[ 11] ✗ # Voor de maximale range is 8000 gekozen, omdat ik de eerste 1000 priemgetallen hierin verwacht te vinden.
+[ 20] ✗ # Wanneer het getal deelbaar is door een lager getal met uitzondering van 1, dan is het geen priemgetal.
+[ 29] ✗ # Je wilt graag een lijst met 1000 elementen. Wanneer de lijst deze lengte bereikt roep je een break aan.
+[ 59] ✗ #Als het verschil groter wordt dan de variabele1, dan  neemt variabele1 de waarde van het verschil aan.
+[110] ✗ # Gebruik dezelfde code, wanneer het deeltje in het gat komt plaats je hem erbuiten met snelheid nul.
+[ 61] ✗     if even == evenlijstdoorsompriemen: #controle of lijst met even getallen gelijk is aan lijst door som priemen
+[101] ✗                                 # door a<b te gebruiken krijg je maar eenmalig de bevriende getallen.
+[102] ✗                                 # door 2 variabele (varia1 en variabele) door de lijsten te lopen zoekt de computer
+[ 66] ✗             beginreeks = priem                 #als er geen priemgetal is begint de reeks (laaste priemgetal)
+[ 70] ✗             eindreeks=priem                     #einde van de reeks zonder priemgetallen (begin nieuw priemgetal)
+[ 73] ✗             if reeks > hoogstereeks:             #als een nieuwe reeks langer is dan de vorigste langste...
+[ 74] ✗                 langste_reeks_geen_priem =priem #onstaat er een nieuwe langste reeks die eindigd bij dit priemgetal
+[ 80] ✗     while waarde<=hoogstereeks-2:        # -2 omdat reeks de lengte is inclusief de begin en eind priemgetal. Deze horen niet in de reeks
+[ 83] ✗         print langste_reeks_geen_priem     #reeks van hoogste niet priemgetal naar laagste niet priemgetal reeks onder n=10000
+[ 61] ✗     if even == evenlijstdoorsompriemen: #controle of lijst met even getallen gelijk is aan lijst door som priemen
+[101] ✗                                 # door a<b te gebruiken krijg je maar eenmalig de bevriende getallen.
+[102] ✗                                 # door 2 variabele (varia1 en variabele) door de lijsten te lopen zoekt de computer
+[ 66] ✗             beginreeks = priem                 #als er geen priemgetal is begint de reeks (laaste priemgetal)
+[ 70] ✗             eindreeks=priem                     #einde van de reeks zonder priemgetallen (begin nieuw priemgetal)
+[ 73] ✗             if reeks > hoogstereeks:             #als een nieuwe reeks langer is dan de vorigste langste...
+[ 74] ✗                 langste_reeks_geen_priem =priem #onstaat er een nieuwe langste reeks die eindigd bij dit priemgetal
+[ 80] ✗     while waarde<=hoogstereeks-2:        # -2 omdat reeks de lengte is inclusief de begin en eind priemgetal. Deze horen niet in de reeks
+[ 83] ✗         print langste_reeks_geen_priem     #reeks van hoogste niet priemgetal naar laagste niet priemgetal reeks onder n=10000
+[  9] ✗ Er wordt een grafiek weergeven met het aantal balletjes groter dan x=0.5 wordt weergeven als functie van de tijd.
+[ 13] ✗ De vierde grafiek laat hetzelfde zien als grafiek 3 maar dan met een 2 keer zo grote random snelheid van
+[ 15] ✗ De beginpunt van alle balletjes is (0.25,0.75), waarbij ze een random snelheid hebben tot 0.10 of 0.20.
+[173] ✗     zo korte tijdstip. Bij het wegfilteren van de oneven getallen in de lijst, verdubbelt de snelheid
+
+Lots of expressions:
+[ 73] ✗     integraal = (float(len(goed) - len(onder_nul))/(len(goed) + len(onder_nul) + len(fout))) * opp_box
+[107] ✗             afstand += np.sqrt((xlist[index - 1] - xlist[index])**2 + (ylist[index - 1] - ylist[index])**2)
+[224] ✗                 pythagoras = sqrt(((deeltjes_lijst[i][0]-deeltjes_lijst[j][0])**2) + ((deeltjes_lijst[i][1]-deeltjes_lijst[j][1])**2))
+[ 51] ✗     integraal = x * y * (float(len(goedbovenx_x))-float(len(goedonderx_x))) / aantal_worpen
+[ 53] ✗                     afstand_lijst.append(((abs(bal1[0]) - (bal2[0]))**2) + ((abs(bal1[1]) - bal2[1])**2) ** 0.5)
+[ 23] ✗         integraal = (stapgrootte/2)*(functie(beginwaarde)+(functie(eindwaarde)))+(stapgrootte*totaal)
+[ 95] ✗     product_absolute_lengte = ( V1[0] ** 2 + V1[1] ** 2 ) ** 0.5  * (V2[0] ** 2 + V2[1] ** 2 ) ** 0.5
+[ 85] ✗         growth_rates.append( ( ( float(population_list[population]) - population_list[population - 1] ) / population_list[population - 1] ) * 100 )
+[121] ✗             absolute_afstanden.append( (( positions_x[n] - positions_x[(n + 1): len(positions_x)][p] ) ** 2 + ( positions_y[n] - positions_y[(n + 1): len(positions_y)][p] ) ** 2 ) ** 0.5 )
+[ 39] ✗                     datum_hoogste_temperatuur = int( data[2][:4] ), int( data[2][4:6] ), int( data[2][6:8] )
+[ 44] ✗                     datum_laagste_temperatuur = int( data[2][:4] ), int( data[2][4:6] ), int( data[2][6:8] )
+[ 62] ✗         difference_list.append(((ylist[xlist.index(game)] - c) / (errorlist[xlist.index(game)])) ** 2)
+[ 21] ✗         solution = d_x * (sum(list) - list[len(list) - 2]) + d_x / 2 * (list[0] + (list[len(list) - 1]))
+[ 37] ✗         solution = d_x * (sum(list) - list[len(list) - 2]) + d_x / 2 * (list[0] + (list[len(list) - 1]))
+[ 51] ✗         solution = d_x * (sum(list) - list[len(list) - 2]) + d_x / 2 * (list[0] + (list[len(list) - 1]))
+[285] ✗         zlist_new.append((((zlist[i])[0] / 10), ((zlist[i])[1] / 10), ((zlist[i])[2] / 10), ((zlist[i])[3] / 10)))
+[290] ✗             dist_ball_m_ball_i = math.sqrt(((((zlist_new[i])[0]) - (zlist_new[m])[0]) ** 2) + ((((zlist_new[i])[1]) - (zlist_new[m])[1]) ** 2))
+[334] ✗ #    list_of_balls.append(((list_of_balls_temp[i])[0] / 10,(list_of_balls_temp[i])[1] / 10,(list_of_balls_temp[i])[2] / 10,(list_of_balls_temp[i])[3] / 10))
+[ 92] ✗     grenslijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[106] ✗     grenslijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[248] ✗     existencelijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[262] ✗     existencelijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[276] ✗     existencelijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[290] ✗     existencelijst = somlijst(l0,somlijst(l9,somlijst(l8,somlijst(l7,somlijst(l6,somlijst(l5,somlijst(l4,somlijst(l3,somlijst(l2,l1)))))))))
+[ 90] ✗             integraal = (float(N_goed) / N *  (x_max - x_min) * (y_max - y_min)) + (x_max - x_min) * (- y_max)
+[107] ✗             integraal = float(N_goed) / N *  (x_max - x_min) * (y_max - y_min) + (x_max - x_min) * y_min
+[150] ✗                 afstand += ((ball_list[b2][0] - ball_list[b1][0]) ** 2 + (ball_list[b2][1] - ball_list[b1][1]) ** 2) ** 0.5
+[ 65] ✗         afstand_punten = numpy.sqrt(((x_een - x_twee) ** 2) + ((y_een - y_twee) ** 2) + ((z_een - z_twee) ** 2))
+[109] ✗        balltuple = (balltuple [0] + dt * balltuple[2],) + (balltuple[1] + dt * balltuple[3],) + balltuple[2:]
+[113] ✗            balltuple = (balltuple[0],)+ (10 - (balltuple[1] + 10)  ,) + (balltuple[2],) + (-balltuple[3],)
+[ 91] ✗            afstand = ((lijst_bx[k][i] - lijst_bx[j][i])**2 + (lijst_by[k][i] - lijst_by[j][i])**2)**0.5
+
+Lots of expressions in if-statement-condition:
+[ 73] ✗         if lijst[k][0] == lijst[p][1] and lijst[k][1] == lijst[p][0] and lijst[k][0] != lijst[p][0]:
+[ 56] ✗     if sqrt(absolute_value((ball1[0] - ball2[0]))**2 + absolute_value(ball1[1] - ball2[1])**2 + absolute_value((ball1[2]-ball2[2])**2)) < sumradii:
+[  5] ✗ if (P1 == 'rock' and P2 == 'scissors') or (P1 == 'scissors' and P2 == 'paper') or (P1 == 'paper' and P2 == 'rock'):
+[  8] ✗ elif (P1 == 'rock' and P2 == 'paper') or (P1 == 'scissors' and P2 == 'rock') or (P1 == 'paper' and P2 == 'scissors'):
+[ 23] ✗     if (keuze1 == 'rock' and keuze2 == 'scissors') or (keuze1 == 'scissors' and keuze2 == 'paper') or (keuze1 == 'paper' and keuze2 == 'rock'):
+[ 26] ✗     elif (keuze1 == 'rock' and keuze2 == 'paper') or (keuze1 == 'scissors' and keuze2 == 'rock') or (keuze1 == 'paper' and keuze2 == 'scissors'):
+[ 29] ✗     elif (keuze1 == keuze2 == 'rock') or (keuze1 == keuze2 == 'paper') or (keuze1 == keuze2 =='scissors'):
+[ 15] ✗     if (p1 == "rock" and p2 == "rock") or (p1 == "paper" and p2 == "paper") or (p1 == "scissors" and p2 == "scissors"):
+[ 17] ✗     elif (p1 == "rock" and p2 == "scissors") or (p1 == "paper" and p2 == "rock") or (p1 == "scissors" and p2 == "paper"):
+[ 19] ✗     elif (p1 == "rock" and p2 == "paper") or (p1 == "paper" and p2 == "scissors") or (p1 == "scissors" and p2 == "rock"):
+[198] ✗             if (0.8 < ball_list[i][0] + ball_list[i][2] * dt < 0.9) and (ball_list[i][1] + ball_list[i][3] * dt <= 0):
+[ 17] ✗     if (p1 == "rock" and p2 == "rock") or (p1 == "paper" and p2 == "paper") or (p1 == "scissors" and p2 == "scissors"):
+[ 19] ✗     elif (p1 == "rock" and p2 == "scissors") or (p1 == "scissors" and p2 == "paper") or (p1 == "paper" and p2 == "rock"):
+[ 21] ✗     elif (p1 == "rock" and p2 == "paper") or (p1 == "scissors" and p2 == "rock") or (p1 == "paper" and "scissors"):
+[106] ✗                 if getal[varia1] == som_deler[variabele] and getal[varia1]!=som_deler[varia1] and getal[varia1]<som_deler[varia1]:
+[106] ✗                 if getal[varia1] == som_deler[variabele] and getal[varia1]!=som_deler[varia1] and getal[varia1]<som_deler[varia1]:
+[ 94] ✗                 if (xlistkwadraat[nkwadraat]==xgetalkwadraat and ylistkwadraat[nkwadraat]<=ygetalkwadraat):
+[100] ✗         if lijst1_tup[index1][0] == lijst1_tup[index2][1] and lijst1_tup[index1][1] == lijst1_tup[index2][0]:
+
+Long Print Statements
+[ 78] ✗     print 'The maximum temperature was', maximum, 'Celsius on ', day_max , '-', month_max, '-', year_max
+[ 79] ✗     print 'The minimum temperature was', minimum, 'Celsius on ', day_min, '-', month_min, '-', year_min
+[117] ✗     print day_first, '-', month_first, '-', year_first, 'en', day_last, '-', month_last, '-', year_last
+[170] ✗ print "ceiling test (for multadd) with, a = 2, b = log(12,7) and c =roundup of absolute value(276.0/19):", ceiling_test
+[263] ✗ print "Test voor deeltje_step met deeltje1 met startpositie = (0.25, 0.75) + random_v(0.1) en tijstap 'dt' geeft:\n",
+[199] ✗ print "De koudste dag in Nederland was op %s-%s-%s"%(str(datum)[6:], str(datum)[4:6], str(datum)[0:4]) ,\
+[201] ✗ print "De warmste dag in Nederland was op %s-%s-%s"%(str(datum2)[6:], str(datum2)[4:6], str(datum2)[0:4]) ,\
+[ 63] ✗ in De Bilt was", lengte_periode, "dagen lang en eindigde op: %s-%s-%s" %(str(datum)[6:], str(datum)[4:6], str(datum)[0:4])
+[ 59] ✗ print "langste reeks zonder priemgetallen:", range(lijst[gevonden_index]+1,lijst[gevonden_index + 1]) # lijst[gevonden_index] + 1, zodat de reeks niet het priemgetal zelf includeert.
+[101] ✗             print 'De t(1/2) bij', aantal_ballen, 'ballen is', (numpy.arange(tijdstappen_persec * tijdsduur)[s]) / float(tijdstappen_persec), 'seconden'
+[106] ✗             print 'De t(1/2) met', aantal_ballen, 'ballen is', numpy.arange(tijdstappen_persec * tijdsduur)
+[ 91] ✗     #print 'De door de Bilt het hoogst gemeten temperatuur in de 20e eeuw was',max_temp, 'graden, gemeten op', max_datum[6:],'-',max_datum[4:6],'-', max_datum[0:4]
+[ 92] ✗     #print 'De door de Bilt het laagst gemeten temperatuur in de 20e eeuw was',min_temp, 'graden, gemeten op', min_datum[6:],'-',min_datum[4:6],'-', min_datum[0:4]
+[ 98] ✗     #'dagen, deze periode eindigde op', datum_langste_vorst[6:],'-', datum_langste_vorst[4:6],'-', datum_langste_vorst[0:4]
+[ 35] ✗                     print sumOfPrimes, 'can be calculated by the primes:', firstNumber, 'and', secondNumber
+[ 97] ✗ print 'List equalities between [1,3,6,9] & [10,14,3,72,9]: ', list_intersection([1,3,6,9],[10,14,3,72,9])
+[ 92] ✗     print 'De hoogst gemeten temperatuur was:', maximum, 'op', datum[6:8], '-' , datum[4:6], '-' ,datum[:4]
+[ 93] ✗     print 'De laagst gemeten temperatuur was:', minimum, 'op', datum[6:8], '-' , datum[4:6], '-' ,datum[:4]
+[125] ✗ print opgave1b(max_temp(), dates()), 'De langste periode dat het heeft gevroren is van 03 tot 24 februari 1947.'
+[ 30] ✗                     print basispriem, '+', optelpriem, '=',evengetal #zo ja, dan wordt de som met het antwoordt geprint
+[ 48] ✗     print '-De hoogste temperatuur is', hoogste_temperatuur,'graden,', 'dat was op', datum_hoogste_temperatuur
+[ 49] ✗     print '-De laagste temperatuur is', laagste_temperatuur,'graden,', 'dat was op', datum_laagste_temperatuur
+[ 84] ✗     print '-Deze periode van vorst eindigde op de volgende datum:', vorst_jaar[:4], vorst_jaar[4:6], vorst_jaar[6:8],'.'
+[ 65] ✗     print '-Deze periode eindigde op de volgende datum:', vorst_jaar[:4], vorst_jaar[4:6], vorst_jaar[6:8],'.'
+[ 24] ✗ print "Het maximale interval tussen twee priemgetallen bevindt zich tussen het", str(maximum+1)+"e priemgetal, het getal", str(priemlijst[maximum])+", en het", str(maximum+2)+"e priemgetal, het getal", str(priemlijst[maximum+1])+". Tussen deze twee priemgetallen bevinden zich", str(verschil-1), "niet-priemgetallen."
+[ 71] ✗             print 'congratulations you finally entered a number thats divisible by 2 was not that hard right?'
+[ 45] ✗     print 'De minimum temperatuur ooit gemeten is:' ,min_temp, 'Dit was op de volgende datum', datum[index][:4],datum[index][4:6],datum[index][6:8]
+[ 62] ✗     print 'De maximum temperatuur gemeten is', max_temp , 'Dit gebeurd op op de volgende datum', datum[index][:4],datum[index][4:6],datum[index][6:8]
+[ 96] ✗     print 'De langste periode dat het achterelkaar heeft gevroren is:', int(max_counter),'De laatste dag dat het vroor was:', datum_laag[laatste_dag-1][:4], datum_laag[laatste_dag-1][4:6], datum_laag[laatste_dag-1][6:]
+[ 49] ✗ print 'This is a list of the differences between two consecutive numbers (number n - number n-1) of which a sum of two primes is found (exists): ', difference_list
+[ 53] ✗ print 'As can be seen, the maximum difference (and only difference) is ', max_difference,', and the minimum difference (and, wow, the only difference) is ', min(difference_list),'. This means no number differs more or less than 2 of the previous number. As we started with 4, we get all even numbers to 1000. And we only observed the numbers which in fact had a sum of two primes. Thus, it is proven that every even number < 1000 can be written as the sum of two primes. '
+[ 59] ✗ print 'Of all consecutive prime numbers, the difference between', primes_list[difference_list.index(max(difference_list))], 'and', primes_list[difference_list.index(max(difference_list)) + 1], ' is highest. So the longest string consecutive non-prime numbers is ', primes_list[difference_list.index(max(difference_list))] + 1, '-', primes_list[difference_list.index(max(difference_list)) + 1] - 1,'.'
+[ 81] ✗ print 'sin(pi/4) + cos(pi/4)/2 is: ', multadd(math.cos(multadd(math.pi,0.25,0)),0.5,math.sin(multadd(math.pi,0.25,0)))
+[141] ✗ print 'The cumulative list of [1,1,1,1,1] is ', cumulative_sum([1,1,1,1,1])
+[ 66] ✗ print 'One value of c corresponding with chi^2 =  chi_min^2 + 1 is ',c_list[chi_list.index(new_chi_rounded)]
+[126] ✗         # print (ball_step_2(ball)[0] / 10, ball_step_2(ball)[1] / 10, ball_step_2(ball)[2] / 10, ball_step_2(ball)[3] / 10) # /
+[170] ✗         # print (ball_step_2(ball)[0] / 10, ball_step_2(ball)[1] / 10, ball_step_2(ball)[2] / 10, ball_step_2(ball)[3] / 10) # /
+[228] ✗         # print 'Ball',str(b) + ':',(ball_step_2(ball)[0] / 10, ball_step_2(ball)[1] / 10, ball_step_2(ball)[2] / 10, ball_step_2(ball)[3] / 10) # /
+[351] ✗ #        print 'Ball',str(b) + ':',(ball_step_2(ball)[0], ball_step_2(ball)[1], ball_step_2(ball)[2], ball_step_2(ball)[3])
+[ 50] ✗ print max(maxtemp_list) / 10.0,'degrees Celsius and occured on',date_list[maxtemp_list.index(max(maxtemp_list))],
+[ 52] ✗ print 'in De Bilt is',min(mintemp_list) / 10.0,'degrees Celsius and occured on',date_list2[mintemp_list.index(min(mintemp_list))],', so January 27, 1942.'
+[ 24] ✗ print"We gaan nu een lijst opstellen van alle priemgetallen tussen de 0 en de 10000, ook wordt het 1000e priemgetal onderaan weergeven."
+[ 30] ✗ print "dit is een lijst van de priemgetallen tussen de 0 en de 10000:", l1 #print de priemgetallen uit van 1-10000
+[ 46] ✗ print "het grootste verschil in priemgetallen is dus bij de priemgetallen", grootsteverschil, "-", kleinsteverschil, '=', verschil,"."
+[ 64] ✗         print 'De som van de delers van', y ,  'is namelijk', sum(ydeler_list), 'en de som van de delers van', x, 'is', sum(xdeler_list)
+[171] ✗ print "De datum waarop deze temperatuur is gemeten is:", koudste_dag, koudste_maand, koudste_jaar,'\n'
+[177] ✗ print "De datum waarop deze temperatuur is gemeten is:", warmste_dag, warmste_maand, warmste_jaar,'\n'
+[185] ✗ print "De langste periode onder nul hield:", langste_periode, "dagen aan tot en met:", dag, maand, jaar, '\n'
+[192] ✗ print "De langste periode onder nul met 1 buffer dag hield:", periode_1_dag, "dagen aan, de laatste dag onder nul van deze periode was:",dag_1_dag, maand_1_dag, jaar_1_dag
+[ 58] ✗ print "De langste periode onder nul met 1 buffer dag hield:", periode_1_dag, "dagen aan, de laatste dag onder nul van deze periode was:",dag_1_dag, maand_1_dag, jaar_1_dag
+[ 41] ✗ print 'De lijst ziet er als volgt uit: ', range(deltalijst[-2],deltalijst[-1]), 'Het verschil tussen het eerste getal en het laatste getal is:' , len(range(deltalijst[-2],deltalijst[-1]))
+[324] ✗ print 'Bij : ',float(halfwaardetijd()*0.1), ' is de helft van de ballen uit de doos. Als de snelheid wordt verdubbeld dan is de helft van de ballen bij: ',float(halfwaardetijd2()*0.1) ,' uit de doos'
+[ 46] ✗ print 'De laagste temperatuur gemeten in de Bilt in de twintigste eeuw was: ', temperatuur[plek]*0.1,' deze temperatuur was gemeten op: ', dag[plek],'/', maand[plek],'/', jaar[plek]
+[ 47] ✗ print 'De hoogste temperatuur gemeten in de Bilt in de twintigste eeuw was: ', temperatuur2[plek2]*0.1,' deze temperatuur was gemeten op: ', dag[plek2],'/', maand[plek2],'/', jaar[plek2]
+[ 72] ✗ print 'De langste aaneengesloten periode dat het heeft gevroren duurde ',langste,' dagen. Deze periode begon op: ',edag,'/', emaand,'/', ejaar,'en eindigde op: ', ldag,'/',lmaand,'/',ljaar
+[ 64] ✗ print 'De langste lijst niet-priemgetallen tot 10000 begint vanaf', variabele2, 'en is', variabele1, 'getallen lang.'
+[ 46] ✗ print "Er bevinden zich gemiddeld", sum(rechterkant)/len(rechterkant), "van de 500 ballen aan de rechterkant"
+[167] ✗ print "De afgelegde afstand is :", gemsnelheid * len(lijsttijd), "meter, ofwel", gemsnelheid*len(lijsttijd)/1000, "km"
+[ 28] ✗     print 'Het kleinste getal is',kleinstegetal,', Het grootste getal is', grootstegetal, ', De getallen deelbaar door 3 zijn:', listdoor3
+[ 94] ✗     print set(l1).intersection(l2), set(l3).intersection(l4), set(l5).intersection(l6),set(l7).intersection(l8),
+[ 70] ✗ print 'Totaal aantal blokken van sin(x) is:',totalsin,'waarvan', totalsin-nietonderlijnsin,'onder de grafiek.'
+[ 95] ✗                     #print xgetalkwadraat,xlistkwadraat[nkwadraat],ygetalkwadraat,ylistkwadraat[nkwadraat],nietonderlijnkwadraat
+[ 99] ✗ print 'Totaal aantal blokken van sin(x) is:',totalkwadraat,'waarvan', totalkwadraat-nietonderlijnkwadraat,'onder de grafiek.'
+[ 95] ✗ print 'De opp van functie sin(x^2) vanaf x=',beginxkwadraat,'tot x=',eindxkwadraat, 'is',totaloppkwadraat
+[111] ✗                         #print 'Na',hoeveelheiddeeltjes.index(0.5*deeltjes), 'seconden is de helft uit de doos.'
+[183] ✗     print 'Na',hoeveelheiddeeltjes.index(0.5*deeltjes), 'seconden is de helft uit de doos bij normale snelheid'
+[184] ✗     print 'Na',hoeveelheiddeeltjes2.index(0.5*deeltjes), 'seconden is de helft uit de doos bij 2 keer zo grote snelheid'
+[187] ✗     print 'Bij een 2 keer zo grote random snelheid is de halveertijd',float(a/b), 'keer zo snel bereikt.(afgerond 2 keer zo snel).'
+[126] ✗     print 'De langste aantal dagen onder de 0 graden was:', langstereeks,'dagen met als einddag:',int(langstereeks_laatstedag)
+[ 70] ✗     print 'De langste aantal dagen onder de 0 graden (met een dag uitzondering) was:', langstereeks,'dagen met als einddag:',int(langstereeks_laatstedag)
+
+Long String:
+[ 54] ✗     print 'Deze reeks getallen is de langste reeks aaneengesloten niet-priemgetallen onder n=10000:', range(kleinstepriem,grootstepriem)
+[ 95] ✗ print 'The dictionary for which each number is sorted by its last digit for [45, 90, 30, 33, 34, 64, 34, 38, 72, 20] is:'
+[ 27] ✗         print lijstmetcombinaties[a] - 2, 'error er is geen combinatie van priemgetallen die tot dit getal komt.'
+[ 51] ✗ print 'de onzekerheid wordt ongeveer 4 keer zo groot de beste fittende waarde voor c blijft hetzelfde (elke gi wordt 4 keer zo groot doordat half in kwadraat is 1/4. delen door breuk dus 4 keer zo groot. c veranderd daardoor dus niet)'
+[112] ✗     print 'deze test is voor (3, 1, 2, 4), 23. De bal wordt hier zowel in de x- als y-richting verplaatst'
+[ 27] ✗ print 'testcases : [1, 3214, 4, 3, 10, 5, 3, 2, 4, 7, 3456, 457, 35, 678, 5, 45, 21345], [45, 90, 30, 33, 34, 64, 34, 28, 72, 20] & [18, 27, 0, 4, 84, 2, 93, 44, 84, 83, 90, 30, 70, 64, 2345, 634, 3745, 8934]'
+[ 93] ✗ print "Testing for f(x) = x in range 0 to 1 should be 0.5 and results with MonteCarlo in:", monte_carlo(0,1,10000, function)
+[ 94] ✗ print "Testing for f(x) = x^x in range 0 to 1 and with 10000 points, results with MonteCarlo in:", monte_carlo(0,1,10000, function1)
+[ 95] ✗ print "Testing for f(x) = sin(x) in range 0.1 to 2.0 with 1000 points results with MonteCarlo in:", monte_carlo(0.1,2.0,1000,function2)
+[ 96] ✗ print "Testing for f(x) = sin(x^2) in range 0 to pi with 1000 points results with MonteCarlo in:", monte_carlo(0,pi,1000,function3)
+[126] ✗ print "Test for sort_by_digit with list [45, 90, 30, 33, 34, 64, 34, 28, 72, 20] returns dictionary:\n", sort_by_digit([45, 90, 30, 33, 34, 64, 34, 28, 72, 20])
+[127] ✗ print "Test for sort_by_digit with list [0.01, 9.1, 7, 31, 3086,21] returns dictionary:\n", sort_by_digit([0.01, 9.1, 7, 31, 3086,21])
+[128] ✗ print "Test for sort_by_digit with list [1, 2, 3, 4, 5, 6,7] returns dictionary:\n", sort_by_digit([1, 2, 3, 4, 5, 6,7])
+[174] ✗ print "Testing for move_ball with ball10, t = 0.01 and dt = 0.001:\n",  move_ball(ball20,0.01,0.001)
+[ 28] ✗ n = input("Tot welke n wil je de max. verschilwaarde van twee priemgetallen hebben? ( vul getal in): ")
+[ 52] ✗     print 'De gemiddelde afstand tussen twee willekeurige punten in een kubus van 1,1,1, is', g_dxyz
+[ 29] ✗ print 'Het grootste aantal opeenvolgende niet-priemgetallen onder de 10.000 loopt van', k+1, 't/m', l-1, 'en is een reeks van', p, 'getallen'
+[ 96] ✗ print 'Enter a base number and an exponent to calculate the next ten\nexponents for the chosen base.'
+[ 38] ✗ print 'Enter a base number and an exponent to calculate the next ten\nexponents for the chosen base.'
+[ 72] ✗ print 'Als sigma overal twee keer zo klein wordt, dan wordt delta_c vier keer zo klein, doordat X^2 overal groter wordt (men deelt door een kleiner getal), zal X^2+1 dichterbij de beste waarde van c liggen'
+[ 11] ✗ rangeMax = input("Enter an even integer up to which you would like to see what sum of primes it can be: ")
+[118] ✗ print 'Opgave 2.c: De waarde voor delta c voor zowel de rechter- als aan de linkerzijde wordt gehalveerd. \
+[119] ✗ Dit doe ik door in Chi_kwadraat() "yerror_half" in te vullen. De waarde voor de Chi-kwadraat wordt vier keer zo groot.'
+[161] ✗ print 'Opgave 1a: Aantal ballen aan de rechterkant in een doos als functie van de tijd:', move_ball_without_hole(pos_and_vel(100), 0.1, 50)
+[162] ✗ print 'Opgave 1b: Deze lijst met waarden print ik niet vanwege de relatief enorme hoeveelheid aan getallen.'
+[163] ✗ print 'Opgave 1c: Aantal ballen aan in de doos als functie van de tijd:', move_ball_with_hole(pos_and_vel(100), 0.1, 200)
+[164] ✗ print 'Opgave 1d: De verwachting komen overeen met de uitkomst. Namelijk dat de halveringstijd twee keer zo klein wordt.'
+[165] ✗ print 'Dit komt doordat bij een twee keer hogere snelheid, de kans tweemaal zo groot is dat een bal het gat zal bereiken in hetzelfde tijdsbestek.'
+[108] ✗     a=input("Enter a list of numbers, number by number. If you want to end the list type 'STOP'. Number: ")
+[ 36] ✗     return 'The Monte-Carlo integral of x^x from 0 to 1 using 1000000 random points is '+ str(solution)
+[ 65] ✗     return 'The Monte-Carlo integral of sin(x) from 0.1 to 2.0 using 1000000 random points is '+ str(solution)
+[ 93] ✗     return 'The Monte-Carlo integral of sin(x^2) from 0 to pi using 1000000 random points is '+ str(solution)
+[ 33] ✗ print "De lijst met abudantegetallen tussen de 0 en de 100 is:", abudantegetallenlijst
+[  6] ✗ print "we gaan nu bevriende getallen zoeken, bevriende getallen zijn getallen waarbij de som van alle delers van getal 1 een nieuw getal(2) vormen. Als je dan de som van alle delers van getal 2 neemt, dan krijg je hier weer getal 1 uit."
+[ 37] ✗ print "dit doen we door een een priemgetal af te trekken van een even getal, komt hier alweer een priemgetal uit, dan is klopt het."
+[ 21] ✗ print"We gaan nu een lijst opstellen van alle priemgetallen tussen de 0 en de 10000, ook wordt het 1000e priemgetal onderaan weergeven."
+[ 33] ✗ print "we gaan nu het grootste verschil tussen 2 opeenvolgende priemgetallen zoeken, daarna laat ik zien tussen welke twee priemgetallen dit verschil zit. Ook print ik de lijst uit van de getallen tussen die twee priemgetallen."
+[ 36] ✗ "ik ga nu mn eigen grafiek schrijven, dit wordt een grafiek van de snelheid en de afstand/hoogte die je aflegt"
+[ 38] ✗         a = input("Dude, don't be stupid! Try again to fill in a number which you can divide by the number 2")
+[ 41] ✗ print 'Dus alle even getallen onder de 1000 zijn inderdaad te schrijven als de som van twee priemgetallen'
+[114] ✗ print "Het kleinste nulpunt van de functie x^2 + 16x + 25 heeft een x-waarde van:", Opgave2(2, 16, 25), '\n'
+[122] ✗ print "De gemiddelde afstand van 100 tests met 2 willekeurig gegenereerde punten in een box van 1 bij 1 is:",Opgave4(100), '\n'
+[ 83] ✗ print 'het halveren van alle onzekerheden maakt chi 4 maal zo groot (delen door (1/2)^2), het uitrekenen van delta c word alsnog gedaan door de kleinste chi + 1 te nemen. Omdat chi nu groter is en de +1 niet mee schaalt zal delta c nu dus kleiner(nauwkeuriger) zijn.'
+[118] ✗ print "Use the function sort by digit to order the list with the numbers: [45, 90, 30, 33, 34, 64, 34, 28, 72 and 20] by their last digit:"
+[331] ✗ print 'de tijd waarop de helft van de deeltjes ontsnapt uit de doos is:', halverings_tijd(deeltjes, dt, sec)
+[332] ✗ print 'de gemiddelde tijd waarop de helft van de deeltjes is ontsnapt uit de doos van 10 tests is:', gem_half_tijd(deeltjes, dt, sec)
+[333] ✗ print 'de tijd waarop de helft van de deeltjes met een dubbele snelheid ontsnapt uit de doos is:', halverings_tijd_2(deeltjes, dt, sec)
+[334] ✗ print 'de gemiddelde tijd waarop de helft van de deeltjes met een dubbele snelheid ontsnapt uit de doos van 10 tests is:', gem_half_tijd_2(deeltjes, dt, sec), '\n'
+[ 37] ✗ print "Voor de lijst: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79]"
+[ 62] ✗         print 'De lijst met even getallen tot 1000 is gelijk aan de gevonden even getallen door de som van twee priemgetallen'
+[ 62] ✗         print 'De lijst met even getallen tot 1000 is gelijk aan de gevonden even getallen door de som van twee priemgetallen'
+[ 94] ✗ print 'Als de fout in c twee keer zo klein wordt, wordt door de kwadratische funtie de onzekerheid in c twee keer zo klein.'
+[ 95] ✗ print 'Dit komt omdat de chikwadraat voor alle punten 4 keer zo groot wordt, wat een kwadratische functie compenseert.'
+
+Function Definition:
+[165] ✗ def make_subplot_hist_and_plot(title_hist, x1, bins, x1label, title_plot, x2, y2, x2label, y2label, axes):
+
+
+Function Call:
+[ 77] ✗     plt.axis([find_minimum(x_list), find_maximum(x_list), find_minimum(y_list), find_maximum(y_list)])
+[231] ✗ make_subplot_hist_and_plot ("Histogram van de Temperatuur op 13 december in de 20e eeuw", temp_list, 20, 'Temperatuur(C)',\
+[232] ✗ "Temperatuur op 13 december in de 20e eeuw", time_list, temp_list, 'Tijd(jaren)','Temperatuur(C)', [1900,1999,-10,20])
+[ 46] ✗     plt.errorbar([1,2,3,4,5,6,7,8,9,10],[55,50,39,58,54,57,78,66,62,82],[5,4,9,4,5,5,7,3,6,6],fmt='o')
+[ 69] ✗ plot(growth_rate_dict.keys(),growth_rate_dict.values(),'Jaren','Groei','De groei van de populatie van Nederland tussen 1950 en 2010')
+[314] ✗ plot(n.arange(0,len(rechtshonderdbal())/10,0.1),rechtshonderdbal(),'Tijd',' ','Aantal ballen aan de rechterkant')
+[317] ✗ plot(n.arange(0,len(gemd())/10,0.1),gemd(),'Tijd','Gemiddelde afstand','Gemiddelde afstand van de ballen over tijd')
+[320] ✗ plot(n.arange(0,len(honderdgatbal())/10,0.1),honderdgatbal(),'Tijd',' ','Aantal ballen in de doos')
+[116] ✗ plot_dict(population_dict("/Users/Rosa/Documents/programmeren/population.csv"), "population per year")
+
+Misc:
+[ 34] ✗     return "De lijst met de even getallen in de lijst =", evengetallen, "De som van de oneven getallen in de lijst =", som(onevengetallen)rde voor c blijft hetzelfde (elke gi wordt 4 keer zo groot doordat half in kwadraat is 1/4. delen door breuk dus 4 keer zo groot. c veranderd daardoor dus niet)'
+[ 34] ✗     return "De lijst met de even getallen in de lijst =", evengetallen, "De som van de oneven getallen in de lijst =", som(onevengetallen)
+[ 65] ✗     maand = {'maart' :1 , 'april' :2, 'mei' :3, 'juni' :4, 'juli' :5, 'augustus' :6, 'september' :7, 'oktober' :8, 'november' :9, 'december' :10, 'januari' :11, 'februari' :12}
+[ 67] ✗     dedag = {0 : 'zondag', 1 : 'maandag', 2 : 'dinsdag', 3 : 'woensdag', 4 : 'donderdag', 5 : 'vrijdag', 6 : 'zaterdag'}
+[ 11] ✗     maanden =  {1: 'januari', 2: 'februari', 3: 'maart', 4: 'april', 5: 'mei', 6: 'juni', 7: 'juli', 8: 'augustus', 9: 'september', 10: 'oktober', 11: 'november', 12: 'december'}
+[138] ✗     return "de laatste dag van de langste vorstperiode is:", dataomschrijver(data[c]), 'het aantal vriesdagen dat toen geweest waren:', maximumgetal(vriesdagenlijst)
+[153] ✗     maanden =  {'januari' :1, 'februari' :2, 'maart' :3, 'april' :4, 'mei' :5, 'juni' :6, 'juli' :7, 'augustus' :8, 'september' :9, 'oktober' :10 , 'november' :11, 'december' :12}
+[166] ✗ '''Deze opdracht verteld precies hetzelfde als de vorige, alleen werk ik nu met meerdere jaren ipv 1.'''
+[169] ✗     maanden =     {1: 'januari', 2: 'februari', 3: 'maart', 4: 'april', 5: 'mei', 6: 'juni', 7: 'juli', 8: 'augustus', 9: 'september', 10: 'oktober', 11: 'november', 12: 'december'}
+[ 16] ✗ dict_maanden = {'01' : 'Januari', '02' : 'Februari', '03' : 'Maart', '04' : 'April', '05' : 'Mei', '06' : 'Juni', '07' : 'Juli', '08' : 'Augustus', '09' : 'September', '10' : 'Oktober', '11' : 'November', '12' : 'December'}
+[168] ✗ koudste_jaar, koudste_maand, koudste_dag = datum_min_temp[:4], dict_maanden[datum_min_temp[4:6]], datum_min_temp[6:8]
+[174] ✗ warmste_jaar, warmste_maand, warmste_dag = datum_max_temp[:4], dict_maanden[datum_max_temp[4:6]], datum_max_temp[6:8]
+[190] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
+[ 14] ✗ dict_maanden = {'01' : 'Januari', '02' : 'Februari', '03' : 'Maart', '04' : 'April', '05' : 'Mei', '06' : 'Juni', '07' : 'Juli', '08' : 'Augustus', '09' : 'September', '10' : 'Oktober', '11' : 'November', '12' : 'December'}
+[ 56] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
+[133] ✗ print_population_list("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 5\population.csv")
+  [135] ✗ populatie = population_dict("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 5\population.csv")
+[132] ✗ dates_max, temp_max = bestand_uitpakken("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 7\TX_STAID000162.txt")
+  [133] ✗ dates_min, temp_min = bestand_uitpakken("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 7\TN_STAID000162.txt")
+  [ 89] ✗ lat, lo_ng, alt, speed, tijd = bestanden_uitlezen("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 7\Autootje.csv")
+[ 38] ✗ sort_by_digit ([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79])
+[ 43] ✗         x1,x2,y1,y2,z1,z2=random.random(),random.random(),random.random(),random.random(),random.random(),random.random()
+
+COMBO:
+[ 71] ✗     integraal = (float(binnen) / float(count)) * ((ymax - ymin) * (b - a)) + ymin * (b - a) # precentage 'goed' * oppervlakte box + box 'verschuiven' tot de x-as
+
+UNPASRABLE:
+[  2] ✗ <!-- saved from url=(0071)https://dub127.mail.live.com/?tid=cm-XaZ5SBK5BGB8QAhWtf-ag2&fid=flinbox -->
