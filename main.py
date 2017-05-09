@@ -6,6 +6,7 @@ from redbaron import RedBaron
 import abc
 import os
 import logging
+import feedback
 
 # TODO: requirements.txt/setup.py for pip
 from contexts import LineLengthExceededContext, FileContext
@@ -169,12 +170,17 @@ if __name__ == "__main__":
     filename_2 = "./input_files/comment_after_statement_same_line.py"
 
     line_length_violation_counter = LineLengthViolationCounter()
+    line_length_violation_listener_for_comments = LineLengthExceededListenerForComments()
+
     line_length_analyzer = LineLengthAnalyzer()
-    line_length_analyzer.add_line_length_exceeded_listener(LineLengthExceededListenerForComments())
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_counter)
+    line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_listener_for_comments)
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)
+
+    feedback_collector = feedback.FeedbackCollector()
+    feedback.listen(feedback_collector)
 
     # code_analyzer.analyze_file(filename_1)
     # code_analyzer.analyze_file(filename_2)
@@ -184,3 +190,7 @@ if __name__ == "__main__":
         print "Line Length Violations: {}".format(line_length_violation_counter.get_total_violation_count())
 
         print_dictionary_aligned(line_length_violation_counter.get_violation_count_per_file(), prefix=" - ")
+
+    print "Feedback:"
+    for feedback in feedback_collector.get_feedback():
+        print " - [{}]: {}".format(feedback.get_line_number(), feedback.get_text())
