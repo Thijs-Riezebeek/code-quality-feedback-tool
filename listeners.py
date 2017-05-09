@@ -20,6 +20,48 @@ class LineLengthExceededListener:
         raise NotImplementedError("Method on_line_length_exceeded must be implemented")
 
 
+class LineLengthViolationCounter(LineLengthExceededListener):
+    def __init__(self):
+        LineLengthExceededListener.__init__(self)
+        self._line_length_violations = 0
+        self._line_length_violations_per_file = {}  # type: dict[str, int]
+
+    def on_line_length_exceeded(self, context):
+        """
+        :type context: LineLengthExceededContext 
+        """
+        self._line_length_violations += 1
+        self._store_violation_for_file(context.file_context.source_file_name)
+
+    def _store_violation_for_file(self, source_file_name):
+        if source_file_name not in self._line_length_violations_per_file:
+            self._line_length_violations_per_file[source_file_name] = 1
+        else:
+            self._line_length_violations_per_file[source_file_name] += 1
+
+    def get_total_violation_count(self):
+        """
+        :rtype: int 
+        """
+        return self._line_length_violations
+
+    def get_violation_count_for_file(self, file_name):
+        """
+        :type file_name: str
+        :rtype: int 
+        """
+        if file_name not in self._line_length_violations_per_file:
+            return 0
+
+        return self._line_length_violations_per_file[file_name]
+
+    def get_violation_count_per_file(self):
+        """
+        :rtype: dict[str, int] 
+        """
+        return self._line_length_violations_per_file
+
+
 class LineLengthExceededListenerForComments(LineLengthExceededListener):
     def __init__(self):
         LineLengthExceededListener.__init__(self)

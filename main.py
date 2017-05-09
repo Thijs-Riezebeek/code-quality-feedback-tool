@@ -9,7 +9,7 @@ import logging
 
 # TODO: requirements.txt/setup.py for pip
 from contexts import LineLengthExceededContext, FileContext
-from listeners import LineLengthExceededListenerForComments
+from listeners import LineLengthExceededListenerForComments, LineLengthViolationCounter
 
 
 class SourceCodeFileFinder:
@@ -129,8 +129,30 @@ def get_logging_level_from_verbosity(args):
         return logging.WARNING
 
 
+def print_dictionary_aligned(_dict, prefix="", separator=" : "):
+    def length(item):
+        if isinstance(item, int):
+            return len(str(item))
+
+        return len(item)
+
+    longest_key_length = 0
+    longest_value_length = 0
+
+    for key, value in _dict.iteritems():
+        key_length = length(key)
+        value_length = length(value)
+        
+        longest_key_length = max(longest_key_length, key_length)
+        longest_value_length = max(longest_value_length, value_length)
+
+    for key, value in _dict.iteritems():
+        print "{}{:{}}{}{:{}}".format(prefix, key, longest_key_length, separator, value, longest_value_length)
+
+
 def set_up_command_line_arguments():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-s', dest='stats', action='store_true')
     parser.add_argument('-v', dest='verbose', action='store_true')
     parser.add_argument('-vv', dest='very_verbose', action='store_true')
     args = parser.parse_args()
@@ -146,8 +168,10 @@ if __name__ == "__main__":
     filename_1 = "./input_files/single_line_too_long.py"
     filename_2 = "./input_files/comment_after_statement_same_line.py"
 
+    line_length_violation_counter = LineLengthViolationCounter()
     line_length_analyzer = LineLengthAnalyzer()
     line_length_analyzer.add_line_length_exceeded_listener(LineLengthExceededListenerForComments())
+    line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_counter)
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)
@@ -155,3 +179,8 @@ if __name__ == "__main__":
     # code_analyzer.analyze_file(filename_1)
     # code_analyzer.analyze_file(filename_2)
     code_analyzer.analyze_directory("./input_files/students/ProgNS2014/5679699")
+
+    if args.stats:
+        print "Line Length Violations: {}".format(line_length_violation_counter.get_total_violation_count())
+
+        print_dictionary_aligned(line_length_violation_counter.get_violation_count_per_file(), prefix=" - ")
