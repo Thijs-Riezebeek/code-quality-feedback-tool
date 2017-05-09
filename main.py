@@ -1,4 +1,5 @@
 # coding=utf-8
+from baron import ParsingError
 from redbaron import RedBaron, Node, CommentNode
 import abc
 import os
@@ -74,7 +75,11 @@ class LineLengthAnalyzer(FileAnalyzer):
 
         for line_number, line_content in self._yield_all_lengthy_lines(file_path):
             if source_file_fst is None:
-                source_file_fst = RedBaron(file_contents)
+                try:
+                    source_file_fst = RedBaron(file_contents)
+                except ParsingError as parse_error:
+                    # Should probably be a return
+                    continue
 
             context = LineLengthExceededContext(
                 file_context=FileContext(line_number, line_content, file_path),
