@@ -3,15 +3,17 @@ from contexts import FileContext
 
 
 class Feedback:
-    def __init__(self, text, line_number, source_file_name):
+    def __init__(self, text, line_number, source_file_name, code):
         """
         :type text: str 
         :type line_number: int 
         :type source_file_name: str 
+        :type code: str 
         """
         self._text = text
         self._line_number = line_number
         self._source_file_name = source_file_name
+        self._code = code
 
     def get_text(self):
         return self._text
@@ -22,11 +24,15 @@ class Feedback:
     def get_source_file_name(self):
         return self._source_file_name
 
+    def get_code(self):
+        return self._code
+
 
 _feedback_texts = {
     "comment": "Try splitting your comment into multiple lines so that it doesn't exceed the line length limit.",
     "extract_variable": "This line contains a lot of expressions. Storing the results in a variable with a descriptive name will increase the readability."
 }
+
 
 class FeedbackFactory:
     def __init__(self):
@@ -51,7 +57,7 @@ class FeedbackFactory:
         :type file_context: FileContext
         :rtype: Feedback 
         """
-        return Feedback(text, file_context.line_number, file_context.source_file_name)
+        return Feedback(text, file_context.line_number, file_context.source_file_name, file_context.line_content)
 
 
 listeners = []  # type: list[FeedbackListener]

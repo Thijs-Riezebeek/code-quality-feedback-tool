@@ -190,7 +190,7 @@ if __name__ == "__main__":
     code_analyzer.analyze_directory("./input_files/students/ProgNS2014/5679699")
 
     if args.stats:
-        print "Line Length Violations: {}".format(line_length_violation_counter.get_total_violation_count())
+        print "\nLine Length Violations: {}".format(line_length_violation_counter.get_total_violation_count())
 
         print_dictionary_aligned(line_length_violation_counter.get_violation_count_per_file(), prefix=" - ")
 
@@ -199,4 +199,5 @@ if __name__ == "__main__":
         print filename
         for feedback_item in feedback_items:
             print " - [{:3d}] {}".format(feedback_item.get_line_number(), feedback_item.get_text())
+            print "         {}".format(feedback_item.get_code())
         print ""
