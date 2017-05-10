@@ -23,6 +23,11 @@ class Feedback:
         return self._source_file_name
 
 
+_feedback_texts = {
+    "comment": "Try splitting your comment into multiple lines so that it doesn't exceed the line length limit.",
+    "extract_variable": "This line contains a lot of expressions. Storing the results in a variable with a descriptive name will increase the readability."
+}
+
 class FeedbackFactory:
     def __init__(self):
         pass
@@ -32,11 +37,21 @@ class FeedbackFactory:
         :type file_context: FileContext
         :rtype: Feedback 
         """
-        return Feedback(
-            "Comment exceeds the line length",
-            file_context.line_number,
-            file_context.source_file_name
-        )
+        return self._feedback_from_file_context(_feedback_texts["comment"], file_context)
+
+    def extract_variable(self, file_context):
+        """
+        :type file_context: FileContext
+        :rtype: Feedback 
+        """
+        return self._feedback_from_file_context(_feedback_texts["extract_variable"], file_context)
+
+    def _feedback_from_file_context(self, text, file_context):
+        """
+        :type file_context: FileContext
+        :rtype: Feedback 
+        """
+        return Feedback(text, file_context.line_number, file_context.source_file_name)
 
 
 listeners = []  # type: list[FeedbackListener]
@@ -87,6 +102,11 @@ class FeedbackCollector(FeedbackListener):
         :type feedback: Feedback 
         """
         file_name = feedback.get_source_file_name()
+        path_components = file_name.split('/')
+        last_three_path_components = path_components[-3:]
+
+        if len(last_three_path_components) < len(path_components):
+            file_name = ".../" + "/".join(last_three_path_components)
 
         if file_name not in self._feedback_per_file:
             self._feedback_per_file[file_name] = [feedback]

@@ -10,7 +10,8 @@ import feedback
 
 # TODO: requirements.txt/setup.py for pip
 from contexts import LineLengthExceededContext, FileContext
-from listeners import LineLengthExceededListenerForComments, LineLengthViolationCounter
+from listeners import LineLengthExceededListenerForComments, LineLengthViolationCounter, \
+    LineLengthViolationExtractVariableListener
 
 
 class SourceCodeFileFinder:
@@ -171,10 +172,12 @@ if __name__ == "__main__":
 
     line_length_violation_counter = LineLengthViolationCounter()
     line_length_violation_listener_for_comments = LineLengthExceededListenerForComments()
+    line_length_violation_extract_variable_listener = LineLengthViolationExtractVariableListener()
 
     line_length_analyzer = LineLengthAnalyzer()
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_counter)
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_listener_for_comments)
+    line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_extract_variable_listener)
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)
@@ -191,6 +194,9 @@ if __name__ == "__main__":
 
         print_dictionary_aligned(line_length_violation_counter.get_violation_count_per_file(), prefix=" - ")
 
-    print "Feedback:"
-    for feedback in feedback_collector.get_feedback():
-        print " - [{}]: {}".format(feedback.get_line_number(), feedback.get_text())
+    print "\nFeedback:"
+    for filename, feedback_items in feedback_collector.get_feedback_per_file().iteritems():
+        print filename
+        for feedback_item in feedback_items:
+            print " - [{:3d}] {}".format(feedback_item.get_line_number(), feedback_item.get_text())
+        print ""

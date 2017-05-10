@@ -8,6 +8,7 @@ from contexts import LineLengthExceededContext
 from feedback import FeedbackFactory
 
 NODE_TYPE_COMMENT = 'comment'
+NODE_TYPE_ASSIGNMENT = 'assignment'
 
 
 class LineLengthExceededListener:
@@ -64,6 +65,45 @@ class LineLengthViolationCounter(LineLengthExceededListener):
         return self._line_length_violations_per_file
 
 
+class LineLengthViolationExtractVariableListener(LineLengthExceededListener):
+    def __init__(self):
+        LineLengthExceededListener.__init__(self)
+        self._feedback_factory = FeedbackFactory()
+
+    def on_line_length_exceeded(self, context):
+        """
+        :type context: LineLengthExceededContext 
+        """
+        line_number = context.file_context.line_number
+        try:
+            first_node_on_line = context.source_file_fst.at(line_number)
+        except IndexError:
+            # Sometimes RedBaron doesn't understand multi-line strings correctly
+            file_name = context.file_context.source_file_name
+            logging.warn('RedBaron failed to find a node on line {} in file {}'.format(line_number, file_name))
+            return
+
+        if self._count_all_binops_on_same_line(first_node_on_line) > 4:
+            feedback.emit(self._feedback_factory.extract_variable(context.file_context))
+
+    def _count_all_binops_on_same_line(self, node):
+        return len(self._find_all_binops_on_same_line(node))
+
+    def _find_all_binops_on_same_line(self, node):
+        """
+        :type node: Node 
+        :rtype: list[Node] 
+        """
+        binop_nodes_on_same_line = []
+        binop_nodes = node.find_all('BinaryOperatorNode')
+
+        for binop_node in binop_nodes:
+            if _nodes_are_on_same_line(node, binop_node):
+                binop_nodes_on_same_line.append(binop_node)
+
+        return binop_nodes_on_same_line
+
+
 class LineLengthExceededListenerForComments(LineLengthExceededListener):
     def __init__(self):
         LineLengthExceededListener.__init__(self)
@@ -75,6 +115,7 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
         """
         # TODO: Find a way to find comments after if statements (same line)
         line_number = context.file_context.line_number
+        # TODO: Remove code duplication in other listeners
         try:
             first_node_on_line = context.source_file_fst.at(line_number)
         except IndexError:
@@ -108,7 +149,7 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
         """
         current_node = node
 
-        while self._nodes_are_on_same_line(current_node, node):
+        while _nodes_are_on_same_line(current_node, node):
             if current_node.type == NODE_TYPE_COMMENT:
                 return current_node
 
@@ -120,33 +161,33 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
 
         return None
 
-    # TODO: Move elsewhere
-    def _nodes_are_on_same_line(self, node, other_node):
-        """
-        :type node: Node 
-        :type other_node: Node 
-        :rtype: bool 
-        """
-        if not node or not other_node:
-            return False
+# TODO: Move elsewhere
+def _nodes_are_on_same_line(node, other_node):
+    """
+    :type node: Node 
+    :type other_node: Node 
+    :rtype: bool 
+    """
+    if not node or not other_node:
+        return False
 
-        if not self._node_is_on_single_line(node) or not self._node_is_on_single_line(other_node):
-            return False
+    if not _node_is_on_single_line(node) or not _node_is_on_single_line(other_node):
+        return False
 
-        node_box = node.absolute_bounding_box
-        other_node_box = other_node.absolute_bounding_box
+    node_box = node.absolute_bounding_box
+    other_node_box = other_node.absolute_bounding_box
 
-        if node_box.top_left.line != other_node_box.top_left.line:
-            return False
+    if node_box.top_left.line != other_node_box.top_left.line:
+        return False
 
-        return node_box.bottom_right.line == other_node_box.bottom_right.line
+    return node_box.bottom_right.line == other_node_box.bottom_right.line
 
-    # TODO: Move elsewhere
-    def _node_is_on_single_line(self, node):
-        """
-        :type node: Node
-        :rtype: bool
-        """
-        bounding_box = node.absolute_bounding_box
+# TODO: Move elsewhere
+def _node_is_on_single_line(node):
+    """
+    :type node: Node
+    :rtype: bool
+    """
+    bounding_box = node.absolute_bounding_box
 
-        return bounding_box.top_left.line == bounding_box.bottom_right.line
+    return bounding_box.top_left.line == bounding_box.bottom_right.line
