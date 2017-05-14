@@ -4,6 +4,18 @@ Notes:
 It is the first node in a function definition
 It has no parent (thus is not part of an assignment, function call, etc).
 
+- Which reasons might not be very relevant to give feedback on. e.g.
+- WHich provide the biggest benefit
+- Also note something about the triviality of fixing it. Comments are easily split, just put an enter in between.
+  However, variable extraction is non-trivial. The student will have to think. What do I extract, how do I name the new variable.
+  Triviality vs Improvement benefits vs Difficulty
+- Manual inspection of a file and compare it to the feedback. Is it too much?
+- Analyse the maximum feedback per file. 4? 200?
+- No feedback if no specific context can be detected?
+- Evaluatie gaan plannen
+- Own research to put the assistant's focus on the topic at hand
+
+
 Reasons:
  - Comments            : 687
  - Expressions         :  31
@@ -12,7 +24,8 @@ Reasons:
  - Long Strings        :  53
  - Function Call       :   9
  - Function Definition :   1
- - Miscellaneous       :  22
+ - Multi-assignment    :   4
+ - Miscellaneous       :  18
  - Combo               :   1
 
 Comment:
@@ -899,6 +912,13 @@ Function Call:
 [320] ✗ plot(n.arange(0,len(honderdgatbal())/10,0.1),honderdgatbal(),'Tijd',' ','Aantal ballen in de doos')
 [116] ✗ plot_dict(population_dict("/Users/Rosa/Documents/programmeren/population.csv"), "population per year")
 
+
+Multi-assignment:
+[168] ✗ koudste_jaar, koudste_maand, koudste_dag = datum_min_temp[:4], dict_maanden[datum_min_temp[4:6]], datum_min_temp[6:8]
+[174] ✗ warmste_jaar, warmste_maand, warmste_dag = datum_max_temp[:4], dict_maanden[datum_max_temp[4:6]], datum_max_temp[6:8]
+[190] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
+[ 56] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
+
 Misc:
 [ 34] ✗     return "De lijst met de even getallen in de lijst =", evengetallen, "De som van de oneven getallen in de lijst =", som(onevengetallen)rde voor c blijft hetzelfde (elke gi wordt 4 keer zo groot doordat half in kwadraat is 1/4. delen door breuk dus 4 keer zo groot. c veranderd daardoor dus niet)'
 [ 34] ✗     return "De lijst met de even getallen in de lijst =", evengetallen, "De som van de oneven getallen in de lijst =", som(onevengetallen)
@@ -910,11 +930,7 @@ Misc:
 [166] ✗ '''Deze opdracht verteld precies hetzelfde als de vorige, alleen werk ik nu met meerdere jaren ipv 1.'''
 [169] ✗     maanden =     {1: 'januari', 2: 'februari', 3: 'maart', 4: 'april', 5: 'mei', 6: 'juni', 7: 'juli', 8: 'augustus', 9: 'september', 10: 'oktober', 11: 'november', 12: 'december'}
 [ 16] ✗ dict_maanden = {'01' : 'Januari', '02' : 'Februari', '03' : 'Maart', '04' : 'April', '05' : 'Mei', '06' : 'Juni', '07' : 'Juli', '08' : 'Augustus', '09' : 'September', '10' : 'Oktober', '11' : 'November', '12' : 'December'}
-[168] ✗ koudste_jaar, koudste_maand, koudste_dag = datum_min_temp[:4], dict_maanden[datum_min_temp[4:6]], datum_min_temp[6:8]
-[174] ✗ warmste_jaar, warmste_maand, warmste_dag = datum_max_temp[:4], dict_maanden[datum_max_temp[4:6]], datum_max_temp[6:8]
-[190] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
 [ 14] ✗ dict_maanden = {'01' : 'Januari', '02' : 'Februari', '03' : 'Maart', '04' : 'April', '05' : 'Mei', '06' : 'Juni', '07' : 'Juli', '08' : 'Augustus', '09' : 'September', '10' : 'Oktober', '11' : 'November', '12' : 'December'}
-[ 56] ✗ jaar_1_dag, maand_1_dag, dag_1_dag = datum_1_dag[:4], dict_maanden[datum_1_dag[4:6]], datum_1_dag[6:]
 [133] ✗ print_population_list("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 5\population.csv")
   [135] ✗ populatie = population_dict("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 5\population.csv")
 [132] ✗ dates_max, temp_max = bestand_uitpakken("C:\Users\Gebruiker\Desktop\Natuurkunde\Python\Inleiding week 7\TX_STAID000162.txt")
