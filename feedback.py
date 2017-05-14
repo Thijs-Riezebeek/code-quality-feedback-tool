@@ -30,6 +30,7 @@ class Feedback:
 
 _feedback_texts = {
     "comment": "Try splitting your comment into multiple lines so that it doesn't exceed the line length limit.",
+    "comment_after_statement": "Try placing your comment above the relevant line to prevent exceeding the line length limit",
     "extract_variable": "This line contains a lot of expressions. Storing the results in a variable with a descriptive name will increase the readability."
 }
 
@@ -44,6 +45,13 @@ class FeedbackFactory:
         :rtype: Feedback 
         """
         return self._feedback_from_file_context(_feedback_texts["comment"], file_context)
+
+    def comment_after_statement(self, file_context):
+        """
+        :type file_context: FileContext
+        :rtype: Feedback 
+        """
+        return self._feedback_from_file_context(_feedback_texts["comment_after_statement"], file_context)
 
     def extract_variable(self, file_context):
         """

@@ -3,7 +3,6 @@ from abc import abstractmethod
 import logging
 
 import feedback
-from cases import LineLengthExceededCase, CaseType
 from contexts import LineLengthExceededContext
 from feedback import FeedbackFactory
 
@@ -124,42 +123,43 @@ class LineLengthExceededListenerForComments(LineLengthExceededListener):
             logging.warn('RedBaron failed to find a node on line {} in file {}'.format(line_number, file_name))
             return
 
-        comment_too_long_case = self.find_comment_too_long_case_on_line(first_node_on_line, context)
+        self._detect_comments(first_node_on_line, context)
 
-        if comment_too_long_case:
-            comment_feedback = self._feedback_factory.comment(context.file_context)
-            feedback.emit(comment_feedback)
-
-    def find_comment_too_long_case_on_line(self, node, context):
-        """
-        :type node: Node
-        :type context: LineLengthExceededContext 
-        :rtype: LineLengthExceededCase 
-        """
-        comment_node = self.detect_comment_node_on_same_line(node)
-        if not comment_node:
-            return None
-
-        return LineLengthExceededCase(context, node, CaseType.COMMENT)
-
-    # TODO: Move elsewhere
-    def detect_comment_node_on_same_line(self, node):
+    def _detect_comments(self, node, context):
         """
         :type node: Node 
+        :type context: LineLengthExceededContext
         """
-        current_node = node
+        nodes_on_same_line = _get_nodes_on_same_line(node)
 
-        while _nodes_are_on_same_line(current_node, node):
-            if current_node.type == NODE_TYPE_COMMENT:
-                return current_node
+        if len(nodes_on_same_line) == 1 and nodes_on_same_line[0].type == NODE_TYPE_COMMENT:
+            comment_feedback = self._feedback_factory.comment(context.file_context)
+            feedback.emit(comment_feedback)
+        elif len(nodes_on_same_line) > 1 and nodes_on_same_line[-1].type == NODE_TYPE_COMMENT:
+            comment_feedback = self._feedback_factory.comment_after_statement(context.file_context)
+            feedback.emit(comment_feedback)
 
-            tmp_node = current_node.next
-            if not tmp_node:
-                tmp_node = current_node.next_intuitive
 
-            current_node = tmp_node
+# TODO: Move elsewhere
+def _get_nodes_on_same_line(node):
+    """
+    :type node: Node 
+    :rtype: list[Node] 
+    """
+    nodes_on_same_line = []
+    current_node = node
 
-        return None
+    while _nodes_are_on_same_line(node, current_node):
+        nodes_on_same_line.append(current_node)
+
+        tmp_node = current_node.next
+        if not tmp_node:
+            tmp_node = current_node.next_intuitive
+
+        current_node = tmp_node
+
+    return nodes_on_same_line
+
 
 # TODO: Move elsewhere
 def _nodes_are_on_same_line(node, other_node):
