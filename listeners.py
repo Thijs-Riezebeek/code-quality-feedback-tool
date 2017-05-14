@@ -8,6 +8,7 @@ from feedback import FeedbackFactory
 
 NODE_TYPE_COMMENT = 'comment'
 NODE_TYPE_ASSIGNMENT = 'assignment'
+NODE_TYPE_TUPLE = 'tuple'
 
 
 class LineLengthExceededListener:
@@ -63,6 +64,32 @@ class LineLengthViolationCounter(LineLengthExceededListener):
         """
         return self._line_length_violations_per_file
 
+
+class LineLengthViolationMultiAssignmentListener(LineLengthExceededListener):
+    def __init__(self):
+        LineLengthExceededListener.__init__(self)
+        self._feedback_factory = FeedbackFactory()
+
+    def on_line_length_exceeded(self, context):
+        """
+        :type context: LineLengthExceededContext 
+        """
+        line_number = context.file_context.line_number
+        try:
+            first_node_on_line = context.source_file_fst.at(line_number)
+        except IndexError:
+            # Sometimes RedBaron doesn't understand multi-line strings correctly
+            file_name = context.file_context.source_file_name
+            logging.warn('RedBaron failed to find a node on line {} in file {}'.format(line_number, file_name))
+            return
+
+        if first_node_on_line.type == NODE_TYPE_ASSIGNMENT:
+            number_of_targets = len(first_node_on_line.target.value)
+            number_of_values = len(first_node_on_line.value.value)
+
+            if number_of_targets > 1 and number_of_targets == number_of_values:
+                assignment_feedback = self._feedback_factory.multi_assignment(context.file_context)
+                feedback.emit(assignment_feedback)
 
 class LineLengthViolationExtractVariableListener(LineLengthExceededListener):
     def __init__(self):
