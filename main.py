@@ -11,7 +11,8 @@ import feedback
 # TODO: requirements.txt/setup.py for pip
 from contexts import LineLengthExceededContext, FileContext
 from listeners import LineLengthExceededListenerForComments, LineLengthViolationCounter, \
-    LineLengthViolationExtractVariableListener, LineLengthViolationMultiAssignmentListener
+    LineLengthViolationExtractVariableListener, LineLengthViolationMultiAssignmentListener, \
+    LineLengthViolationFunctionDefinitionListener
 
 
 class SourceCodeFileFinder:
@@ -174,12 +175,14 @@ if __name__ == "__main__":
     line_length_violation_listener_for_comments = LineLengthExceededListenerForComments()
     line_length_violation_extract_variable_listener = LineLengthViolationExtractVariableListener()
     line_length_violation_multi_assignment_listener = LineLengthViolationMultiAssignmentListener()
+    line_length_violation_fun_def_listener = LineLengthViolationFunctionDefinitionListener()
 
     line_length_analyzer = LineLengthAnalyzer()
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_counter)
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_listener_for_comments)
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_extract_variable_listener)
     line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_multi_assignment_listener)
+    line_length_analyzer.add_line_length_exceeded_listener(line_length_violation_fun_def_listener)
 
     code_analyzer = CodeAnalyzer()
     code_analyzer.add_file_analyzer(line_length_analyzer)

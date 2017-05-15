@@ -31,8 +31,14 @@ class Feedback:
 _feedback_texts = {
     "comment": "Try splitting your comment into multiple lines so that it doesn't exceed the line length limit.",
     "comment_after_statement": "Try placing your comment above the relevant line to prevent exceeding the line length limit.",
+
     "extract_variable": "This line contains a lot of expressions. Storing the results in a variable with a descriptive name will increase the readability.",
-    "multi_assignment": "This line contains multiple assignments that can be split up into their own lines to reduce the line length."
+
+    "multi_assignment": "This line contains multiple assignments that can be split up into their own lines to reduce the line length.",
+
+    "fundef_long_name": "This function has a very long name, which can probably be shortened without losing any expressiveness.",
+    "fundef_long_arguments": "This function has {long_argument_count} arguments with a long name. These can probably be shortened without losing any expressiveness.",
+    "fundef_many_arguments": "This function has {argument_count} arguments. Try splitting this function up into multiple functions with less arguments",
 }
 
 
@@ -74,6 +80,35 @@ class FeedbackFactory:
         :rtype: Feedback 
         """
         return self._feedback_from_file_context(_feedback_texts["multi_assignment"], file_context)
+
+    def fundef_long_name(self, file_context):
+        """
+        :type file_context: FileContext
+        :rtype: Feedback 
+        """
+        return self._feedback_from_file_context(_feedback_texts["fundef_long_name"], file_context)
+
+    def fundef_long_arguments(self, file_context, number_of_long_arguments):
+        """
+        :type file_context: FileContext
+        :type number_of_long_arguments: int 
+        :rtype: Feedback 
+        """
+        return self._feedback_from_file_context(
+            _feedback_texts["fundef_long_arguments"].format(long_argument_count=number_of_long_arguments),
+            file_context
+        )
+
+    def fundef_many_arguments(self, file_context, number_of_arguments):
+        """
+        :type file_context: FileContext
+        :type number_of_arguments: int
+        :rtype: Feedback 
+        """
+        return self._feedback_from_file_context(
+            _feedback_texts["fundef_many_arguments"].format(argument_count=number_of_arguments),
+            file_context
+        )
 
 
 listeners = []  # type: list[FeedbackListener]
