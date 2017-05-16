@@ -20,6 +20,7 @@ class SourceCodeFileFinder:
         pass
 
     def find_python_files_in_directory(self, directory_path, recursively=True):
+        # TODO: Actually listen to recursively parameter
         absolute_file_paths = []
 
         for file_path in self._yield_all_absolute_file_paths_in_directory(directory_path):
