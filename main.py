@@ -145,7 +145,7 @@ def print_dictionary_aligned(_dict, prefix="", separator=" : "):
     for key, value in _dict.iteritems():
         key_length = length(key)
         value_length = length(value)
-        
+
         longest_key_length = max(longest_key_length, key_length)
         longest_value_length = max(longest_value_length, value_length)
 
@@ -161,6 +161,7 @@ def set_up_command_line_arguments():
     args = parser.parse_args()
 
     return args
+
 
 if __name__ == "__main__":
     # TODO: Rename all 'line length exceeded stuff' to 'line length violation'

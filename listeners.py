@@ -5,7 +5,7 @@ import logging
 import feedback
 from contexts import LineLengthExceededContext
 from feedback import FeedbackFactory
-from redbaron import RedBaron, Node
+from redbaron import Node
 
 NODE_TYPE_COMMENT = 'comment'
 NODE_TYPE_ASSIGNMENT = 'assignment'
