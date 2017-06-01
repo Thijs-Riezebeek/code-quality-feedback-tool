@@ -5,7 +5,8 @@ def average_word_length(file_name):
     with open(file_name, 'r') as file:
         contents = file.read()
 
-    return sum([len(word) for word in contents.split(' ')]) / float(len(contents.split(' ')))
+    split = contents.split(' ')
+    return sum([len(word) for word in split]) / float(len(split))
 
 if __name__ == '__main__':
     filename = argv[1]
