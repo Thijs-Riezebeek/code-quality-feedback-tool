@@ -1,0 +1,4 @@
+Feedback:
+.../examples/snippets/plot.py
+ - [  4] The arguments of this function call contain a lot of expressions. Try putting these expressions on their own line by either storing them in a separate variable with a descriptive name or placing line breaks between each function argument.
+         plt.axis([find_minimum(x_list), find_maximum(x_list), find_minimum(y_list), find_maximum(y_list)])

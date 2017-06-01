@@ -1,0 +1,4 @@
+Feedback:
+.../examples/snippets/distance.py
+ - [  4] This line contains multiple assignments that can be split up into their own lines to reduce the line length.
+             x1, x2, y1, y2, z1, z2 = random.random(), random.random(), random.random(), random.random(), random.random(), random.random()

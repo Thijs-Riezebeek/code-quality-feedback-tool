@@ -1,0 +1,13 @@
+Feedback:
+.../examples/snippets/box.py
+ - [  1] Try splitting your comment into multiple lines so that it doesn't exceed the line length limit.
+         # This program takes a length, width and height as command line arguments and calculates the volume that corresponds to these values
+
+ - [  5] This if-statement contains a lot of conditions. Try placing the logic into a separate function with multiple if-statements.
+             if len(argv) != 4 or not argv[1].isdigit() or not argv[2].isdigit() or not argv[3].isdigit():
+
+ - [  9] Try placing your comment above the relevant line to prevent exceeding the line length limit.
+             box_length = int(argv[1]) # Cast the length, width and height from command line to int, because command line args are strings
+
+ - [ 13] Try putting some line continuations in your print statement to prevent the line from getting too long. If there are a lot of calculations or expressions in your print statement, try putting those in separate variables with a descriptive name to increase readability.
+         print "Box volume is ", box_length * box_width * box_height, "for height: ", box_height, ", width ", box_width, " and length ", box_length

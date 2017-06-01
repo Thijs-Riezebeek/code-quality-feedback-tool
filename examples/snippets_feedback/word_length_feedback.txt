@@ -1,0 +1,4 @@
+Feedback:
+.../examples/snippets/word_length.py
+ - [  8] This line contains a lot of expressions. Try storing part of the expressions in a variable with a descriptive name to increase the readability.
+             return sum([len(word) for word in contents.split(' ')]) / float(len(contents.split(' ')))
